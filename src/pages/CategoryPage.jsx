@@ -17,7 +17,7 @@ export default function CategoryPage({ id }) {
     <main>
       <div className="catHead">
         <div>
-          <Reveal as="p" className="eyebrow">{items.length} programs</Reveal>
+          <Reveal as="p" className="eyebrow">{items.length ? `${items.length} project${items.length > 1 ? 's' : ''}` : 'Coming soon'}</Reveal>
           <Reveal as="h1" className="display" delay={0.08} style={{ fontSize: 'clamp(56px, 11vw, 160px)' }}>{cat.label}</Reveal>
         </div>
         <Reveal as="p" className="body" delay={0.16}>{cat.blurb}</Reveal>

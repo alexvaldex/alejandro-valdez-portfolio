@@ -73,7 +73,7 @@ export default function ProjectPage() {
         <Reveal as="p" className="body" delay={0.1}>{c.overview}</Reveal>
       </section>
 
-      {project.type === 'model' && (
+      {project.type === 'model' && (media.model || project.category === 'rockets') && (
         <ScrollModel title={c.hero} scenes={project.scenes} model={media.model} projectId={id} />
       )}
 

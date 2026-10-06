@@ -7,6 +7,8 @@ export const GITHUB_USER = 'alexvaldex'
 export const categories = [
   { id: 'rockets', label: 'Rockets', blurb: 'Flight hardware: vehicles, payloads, and propulsion.' },
   { id: 'software', label: 'Software', blurb: 'Ground stations, flight software, and mission control.' },
+  { id: 'forge', label: 'The Forge', blurb: 'Hardware built by hand: bionics, armor, and everything in between.' },
+  { id: 'arsenal', label: 'Arsenal', blurb: 'Recreating military technology to understand how it works.' },
   { id: 'impact', label: 'Impact', blurb: 'Research, ventures, and community.' },
 ]
 
@@ -51,6 +53,27 @@ export const projects = [
     stats: [['3', 'platforms'], ['Any', 'flight computer'], ['Live', '3D vehicle']] },
   { id: 'phantom', category: 'software', type: 'gallery', kind: 'Mission Control', year: '2026', status: 'Boom Prize', repo: 'Boom-KnightsRP-Flight-Software',
     stats: [['Mach 1', 'target'], ['CRC-16', 'checked link'], ['Sim + live', 'one interface']] },
+  { id: 'prostheticarm', category: 'forge', type: 'model', kind: 'Bionics', year: '2026', status: 'Build log',
+    stats: [['Arm', 'prosthetic'], ['Custom', 'designed'], ['Hand', 'built']],
+    scenes: [
+      ['Design', 'Built around the user', 'Fill in: what drove the design and who it is for.'],
+      ['Mechanism', 'How it moves', 'Fill in: actuation, joints, and control.'],
+      ['Build', 'From CAD to hardware', 'Fill in: materials, manufacturing, and testing.'],
+    ] },
+  { id: 'prostheticknee', category: 'forge', type: 'model', kind: 'Bionics', year: '2026', status: 'Build log',
+    stats: [['Knee', 'prosthetic'], ['Custom', 'designed'], ['Hand', 'built']],
+    scenes: [
+      ['Design', 'Built for the gait cycle', 'Fill in: what the knee needed to do and why.'],
+      ['Mechanism', 'How it moves', 'Fill in: joint design, damping, and locking.'],
+      ['Build', 'From CAD to hardware', 'Fill in: materials, manufacturing, and testing.'],
+    ] },
+  { id: 'ironarmor', category: 'forge', type: 'model', kind: 'Wearable Armor', year: '2026', status: 'Build log',
+    stats: [['Iron', 'armor'], ['Wearable', 'fit'], ['Hand', 'built']],
+    scenes: [
+      ['Design', 'Shaped to the body', 'Fill in: concept, references, and fit.'],
+      ['Fabrication', 'Cut, formed, assembled', 'Fill in: materials and fabrication methods.'],
+      ['Finish', 'The finished suit', 'Fill in: finishing, mobility, and what you learned.'],
+    ] },
   { id: 'valdex', category: 'impact', type: 'gallery', kind: 'Avionics Company', year: '2025', status: 'Founder',
     stats: [['8 km', 'telemetry range'], ['20G', 'rated hardware'], ['KiCad', 'to flight']] },
   { id: 'fsi', category: 'impact', type: 'gallery', kind: 'Research', year: '2025', status: 'Researcher',

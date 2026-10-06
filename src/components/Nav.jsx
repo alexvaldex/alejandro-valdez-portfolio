@@ -55,6 +55,7 @@ export default function Nav({ onOpenPalette }) {
             <motion.div className="mega" key={menu}
               initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
               transition={{ duration: 0.25 }}>
+              {byCategory(menu).length === 0 && <span className="megaEmpty">First build incoming</span>}
               {byCategory(menu).map(p => (
                 <Link key={p.id} to={`/projects/${p.id}`}>
                   <small>{p.kind}</small>
@@ -91,6 +92,7 @@ export default function Nav({ onOpenPalette }) {
                         initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}>
                         <Link to={`/${cat.id}`} className="drawerAll">All {cat.label.toLowerCase()} →</Link>
+                        {items.length === 0 && <span className="drawerEmpty">First build incoming</span>}
                         {items.map(p => (
                           <Link key={p.id} to={`/projects/${p.id}`} className={pathname === `/projects/${p.id}` ? 'active' : ''}>
                             <small>{p.kind}</small>

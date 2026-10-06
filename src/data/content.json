@@ -199,6 +199,60 @@
         "NDJSON",
         "Cross-platform CI"
       ]
+    },
+    "prostheticarm": {
+      "hero": "Prosthetic Arm",
+      "eyebrow": "The Forge · Bionics",
+      "tagline": "A custom prosthetic arm, designed and built from scratch.",
+      "overview": "Fill in at /admin: the story of this build, who it is for, and what makes it work.",
+      "detail1Title": "Design",
+      "detail1": "Fill in at /admin: design goals and constraints.",
+      "detail2Title": "Build",
+      "detail2": "Fill in at /admin: materials, manufacturing, and assembly.",
+      "detail3Title": "Results",
+      "detail3": "Fill in at /admin: testing, outcomes, and lessons learned.",
+      "tags": [
+        "Bionics",
+        "Mechanical Design",
+        "CAD",
+        "Fabrication"
+      ]
+    },
+    "prostheticknee": {
+      "hero": "Prosthetic Knee",
+      "eyebrow": "The Forge · Bionics",
+      "tagline": "A custom prosthetic knee, designed and built from scratch.",
+      "overview": "Fill in at /admin: the story of this build, who it is for, and what makes it work.",
+      "detail1Title": "Design",
+      "detail1": "Fill in at /admin: design goals and constraints.",
+      "detail2Title": "Build",
+      "detail2": "Fill in at /admin: materials, manufacturing, and assembly.",
+      "detail3Title": "Results",
+      "detail3": "Fill in at /admin: testing, outcomes, and lessons learned.",
+      "tags": [
+        "Bionics",
+        "Mechanical Design",
+        "CAD",
+        "Fabrication"
+      ]
+    },
+    "ironarmor": {
+      "hero": "Iron Armor",
+      "eyebrow": "The Forge · Wearable Armor",
+      "tagline": "A full suit of wearable armor, cut, formed, and assembled by hand.",
+      "overview": "Fill in at /admin: the concept behind the suit and how it came together.",
+      "detail1Title": "Design",
+      "detail1": "Fill in at /admin: design goals and constraints.",
+      "detail2Title": "Build",
+      "detail2": "Fill in at /admin: materials, manufacturing, and assembly.",
+      "detail3Title": "Results",
+      "detail3": "Fill in at /admin: testing, outcomes, and lessons learned.",
+      "tags": [
+        "Metalwork",
+        "Fabrication",
+        "Wearables",
+        "Design"
+      ]
     }
   },
   "about": {

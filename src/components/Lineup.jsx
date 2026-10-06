@@ -9,6 +9,18 @@ import { useContent } from '../hooks/useContent'
 // SpaceX vehicles-style row of tall cards
 export default function Lineup({ items }) {
   const c = useContent()
+  if (!items.length) {
+    return (
+      <div className="lineup">
+        <div className="lineCard lineEmpty">
+          <div className="lineText">
+            <small>Classified · in the shop</small>
+            <h3>First build incoming</h3>
+          </div>
+        </div>
+      </div>
+    )
+  }
   return (
     <div className="lineup">
       {items.map((p, i) => <Card key={p.id} p={p} i={i} c={c} />)}
