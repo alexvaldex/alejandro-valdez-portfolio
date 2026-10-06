@@ -1,5 +1,6 @@
 import { Link, Navigate } from 'react-router-dom'
 import Media from '../components/Media'
+import ModelPreview from '../components/ModelPreview'
 import Reveal from '../components/Reveal'
 import Lineup from '../components/Lineup'
 import { byCategory, categories } from '../data/projects'
@@ -28,7 +29,8 @@ export default function CategoryPage({ id }) {
         const m = getMedia(p.id)
         return (
           <section className="panel" key={p.id}>
-            <div className="panelMedia"><Media item={m.hero || m.gallery[0]} label={`src/media/${p.id}/hero.jpg`} /></div>
+            <div className="panelMedia"><Media item={m.hero || m.gallery[0]} label={m.model ? '' : `src/media/${p.id}/hero.jpg`} /></div>
+            {m.model && <ModelPreview model={m.model} fill={0.85} style={{ left: '38%', top: '12%', bottom: '12%', zIndex: 1 }} />}
             <div className="panelContent">
               <Reveal as="p" className="eyebrow">{p.kind} · {p.status}</Reveal>
               <Reveal as="h2" className="display" delay={0.08}>{pc.hero}</Reveal>

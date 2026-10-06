@@ -11,7 +11,7 @@ import { STLLoader } from 'three/addons/loaders/STLLoader.js'
 import { OBJLoader } from 'three/addons/loaders/OBJLoader.js'
 import { MTLLoader } from 'three/addons/loaders/MTLLoader.js'
 
-const FIT = 5 // world units the model's longest side is scaled to
+export const FIT = 5 // world units the model's longest side is scaled to
 
 // CAD exports sometimes include loose bodies parked away from the assembly.
 // Group meshes whose (slightly padded) boxes touch, keep the biggest group,
@@ -144,7 +144,7 @@ function PlaceholderRocket({ onReady }) {
   )
 }
 
-function Model({ model, onReady }) {
+export function Model({ model, onReady }) {
   if (!model) return <PlaceholderRocket onReady={onReady} />
   if (model.ext === 'glb' || model.ext === 'gltf') return <GLB url={model.url} onReady={onReady} />
   if (model.ext === 'obj') return model.mtl ? <OBJWithMTL url={model.url} mtl={model.mtl} onReady={onReady} /> : <OBJPlain url={model.url} onReady={onReady} />
@@ -255,7 +255,7 @@ function Rig({ progress, interactive, groupRef, children }) {
   return <group ref={group}>{children}</group>
 }
 
-function Studio() {
+export function Studio() {
   return (
     <>
       <ambientLight intensity={0.15} />

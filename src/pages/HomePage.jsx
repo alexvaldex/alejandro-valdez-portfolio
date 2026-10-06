@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import Media from '../components/Media'
+import ModelPreview from '../components/ModelPreview'
 import Reveal from '../components/Reveal'
 import Lineup from '../components/Lineup'
 import CountUp from '../components/CountUp'
@@ -53,7 +54,8 @@ export default function HomePage() {
         const m = getMedia(id)
         return (
           <section className="panel" key={id}>
-            <div className="panelMedia"><Media item={m.hero || m.gallery[0]} label={`src/media/${id}/hero.jpg`} /></div>
+            <div className="panelMedia"><Media item={m.hero || m.gallery[0]} label={m.model ? '' : `src/media/${id}/hero.jpg`} /></div>
+            {m.model && <ModelPreview model={m.model} fill={0.85} style={{ left: '38%', top: '12%', bottom: '12%', zIndex: 1 }} />}
             <div className="panelContent">
               <Reveal as="p" className="eyebrow">{p.kind} · {p.status}</Reveal>
               <Reveal as="h2" className="display" delay={0.08}>{pc.hero}</Reveal>

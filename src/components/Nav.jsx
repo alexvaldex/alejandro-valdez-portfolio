@@ -1,19 +1,25 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
-import { byCategory, categories } from '../data/projects'
+import { byCategory, categories, getProject } from '../data/projects'
 import { useContent } from '../hooks/useContent'
 
 export default function Nav({ onOpenPalette }) {
   const c = useContent()
   const [open, setOpen] = useState(false)
   const [menu, setMenu] = useState(null)
+  const [expanded, setExpanded] = useState(null)
   const [solid, setSolid] = useState(false)
   const [hidden, setHidden] = useState(false)
   const lastY = useRef(0)
   const { pathname } = useLocation()
 
   useEffect(() => { setOpen(false); setMenu(null) }, [pathname])
+  useEffect(() => {
+    if (!open) return
+    const id = pathname.split('/')[2]
+    setExpanded(getProject(id)?.category || categories.find(k => `/${k.id}` === pathname)?.id || categories[0].id)
+  }, [open, pathname])
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY
@@ -68,14 +74,37 @@ export default function Nav({ onOpenPalette }) {
           <motion.aside className="drawer"
             initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}>
-            {categories.map(cat => (
-              <div key={cat.id} style={{ marginBottom: 18 }}>
-                <Link to={`/${cat.id}`} className="drawerCat">{cat.label}</Link>
-                {byCategory(cat.id).map(p => <Link key={p.id} to={`/projects/${p.id}`}>{c.projects[p.id]?.hero}</Link>)}
-              </div>
-            ))}
-            <Link to="/about" className="drawerCat">About</Link>
-            <a href={`mailto:${c.home.socials.email}`} className="drawerCat">Contact</a>
+            <Link to="/" className="drawerTop">Home</Link>
+            {categories.map(cat => {
+              const items = byCategory(cat.id)
+              const isOpen = expanded === cat.id
+              return (
+                <div key={cat.id} className={`drawerGroup ${isOpen ? 'open' : ''}`}>
+                  <button className="drawerHead" onClick={() => setExpanded(isOpen ? null : cat.id)} aria-expanded={isOpen}>
+                    <span>{cat.label}</span>
+                    <small>{items.length}</small>
+                    <i aria-hidden>+</i>
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div className="drawerItems"
+                        initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}>
+                        <Link to={`/${cat.id}`} className="drawerAll">All {cat.label.toLowerCase()} →</Link>
+                        {items.map(p => (
+                          <Link key={p.id} to={`/projects/${p.id}`} className={pathname === `/projects/${p.id}` ? 'active' : ''}>
+                            <small>{p.kind}</small>
+                            {c.projects[p.id]?.hero}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              )
+            })}
+            <Link to="/about" className="drawerTop">About</Link>
+            <a href={`mailto:${c.home.socials.email}`} className="drawerTop">Contact</a>
           </motion.aside>
         </>}
       </AnimatePresence>
