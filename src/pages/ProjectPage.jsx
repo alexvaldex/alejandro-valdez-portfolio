@@ -7,6 +7,8 @@ import ScrollModel from '../components/ScrollModel'
 import { getProject, projects } from '../data/projects'
 import { getMedia } from '../data/media'
 import { RepoCard } from '../components/GitHubPanel'
+import RepoExplorer from '../components/RepoExplorer'
+import SafeBoundary from '../components/SafeBoundary'
 import { useProjectContent } from '../hooks/useContent'
 
 function Hero({ c, project, media }) {
@@ -89,7 +91,9 @@ export default function ProjectPage() {
       </div>
       {c.tags?.length > 0 && <div className="tags">{c.tags.map(t => <span key={t} className="tag">{t}</span>)}</div>}
 
-      <RepoCard name={project.repo} />
+      <SafeBoundary fallback={<RepoCard name={project.repo} />}>
+        {project.buildKit ? <RepoExplorer name={project.repo} /> : <RepoCard name={project.repo} />}
+      </SafeBoundary>
 
       <Link to={`/projects/${next.id}`} className="next">
         <p className="eyebrow" style={{ marginBottom: 18 }}>Next project</p>

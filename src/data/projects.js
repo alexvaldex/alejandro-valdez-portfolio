@@ -32,7 +32,7 @@ export const projects = [
     ],
   },
   {
-    id: 'sunflower', category: 'rockets', type: 'model', kind: 'Scientific Payload', year: '2026', status: 'Flown · IREC 2026', repo: 'Payload-Sunflower-by-SHPE-UCF',
+    id: 'sunflower', category: 'rockets', type: 'model', kind: 'Scientific Payload', year: '2026', status: 'Flown · IREC 2026', repo: 'Payload-Sunflower-by-SHPE-UCF', buildKit: true,
     stats: [['Flown', 'IREC 2026'], ['FreeRTOS', 'flight firmware'], ['Open', 'source design']],
     scenes: [
       ['Mission', 'Science at apogee', 'Pressure, temperature, humidity, and particulate sampling through ascent and descent.'],

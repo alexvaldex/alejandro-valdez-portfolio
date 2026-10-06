@@ -61,3 +61,13 @@ export function timeAgo(date) {
   for (const [u, n] of units) if (s >= n) { const v = Math.floor(s / n); return `${v} ${u}${v > 1 ? 's' : ''} ago` }
   return 'just now'
 }
+
+// Full file tree of a repo, for the open-source explorer
+export function useRepoTree(name) {
+  return useAsync(async () => {
+    if (!name) return null
+    const repo = await cached(`repos/${GITHUB_USER}/${name}`)
+    const tree = await cached(`repos/${GITHUB_USER}/${name}/git/trees/${repo.default_branch}?recursive=1`)
+    return { repo, branch: repo.default_branch, files: tree.tree.filter(f => f.type === 'blob' && !/(^|\/)\.[^/]+$/.test(f.path)) }
+  }, [name])
+}

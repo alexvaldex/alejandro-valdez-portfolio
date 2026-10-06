@@ -232,3 +232,38 @@ img, video { display: block; }
 .megaEmpty, .drawerEmpty { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
 .megaEmpty { padding: 34px 0; }
 .drawerEmpty { padding: 11px 0 14px 20px; }
+
+/* ── Open-source build kit ──────────────────────────── */
+.kit { border-top: 1px solid var(--line); padding-bottom: 140px; }
+.kitHead { padding: 140px var(--gutter) 64px; display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; flex-wrap: wrap; }
+.kitKey { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border-bottom: 1px solid var(--line); }
+.kitKeyCard { background: #000; padding: 44px var(--gutter) 40px; display: flex; flex-direction: column; gap: 14px; transition: background 0.3s; }
+.kitKeyCard:hover { background: #0d0d0d; }
+.kitKeyCard small { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+.kitKeyCard h3 { font-size: 26px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+.kitKeyCard p { font-size: 15px; line-height: 1.6; color: var(--muted); flex: 1; }
+.kitKeyCard span { font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; }
+@media (max-width: 900px) { .kitKey { grid-template-columns: 1fr; } }
+.kitFolders { padding: 80px var(--gutter) 0; }
+.kitFolder { border-top: 1px solid var(--line); }
+.kitFolder:last-child { border-bottom: 1px solid var(--line); }
+.kitFolder > button { width: 100%; display: flex; align-items: baseline; gap: 24px; background: none; border: 0; color: #fff; cursor: pointer; padding: 26px 0; text-align: left; font-family: var(--font); }
+.kitFolderName { font-size: 22px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; min-width: 220px; }
+.kitFolderMeta { flex: 1; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+.kitFolder i { font-style: normal; font-size: 22px; font-weight: 300; transition: transform 0.35s var(--ease); }
+.kitFolder.open i { transform: rotate(45deg); }
+.kitFolder ul { list-style: none; overflow: hidden; }
+.kitFolder li a { display: grid; grid-template-columns: 70px 1fr auto; gap: 18px; align-items: center; padding: 11px 0; border-top: 1px solid rgba(255,255,255,0.06); font-size: 14px; color: rgba(255,255,255,0.75); }
+.kitFolder li a:hover { color: #fff; }
+.kitFolder li:last-child a { margin-bottom: 20px; }
+.kitFolder li small { font-size: 12px; color: var(--muted); }
+.tagKind { font-style: normal; font-size: 10px; letter-spacing: 0.1em; text-align: center; padding: 3px 0; border: 1px solid var(--line); color: var(--muted); }
+.tagKind.k-cad { color: #fff; border-color: rgba(255,255,255,0.5); }
+@media (max-width: 700px) { .kitFolderName { min-width: 0; } .kitFolderMeta { display: none; } }
+.kitGallery { padding: 0 var(--gutter); columns: 3 280px; column-gap: 12px; }
+.kitGallery button { display: block; width: 100%; margin-bottom: 12px; padding: 0; border: 0; background: #0a0a0a; cursor: zoom-in; position: relative; break-inside: avoid; overflow: hidden; }
+.kitGallery img { width: 100%; height: auto; transition: transform 0.6s var(--ease), opacity 0.3s; }
+.kitGallery button:hover img { transform: scale(1.03); }
+.kitGallery span { position: absolute; left: 0; right: 0; bottom: 0; padding: 28px 14px 12px; background: linear-gradient(transparent, rgba(0,0,0,0.85)); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #fff; text-align: left; }
+.lightbox { position: fixed; inset: 0; z-index: 600; background: rgba(0,0,0,0.94); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; padding: 40px; cursor: zoom-out; }
+.lightbox img { max-width: 100%; max-height: 82vh; object-fit: contain; cursor: pointer; }
