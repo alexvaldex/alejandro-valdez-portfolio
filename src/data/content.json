@@ -138,27 +138,6 @@
         "Avionics"
       ]
     },
-    "knightsrp": {
-      "hero": "KnightsRP",
-      "eyebrow": "Hybrid Propulsion · UCF",
-      "tagline": "Student-designed and built hybrid propulsion system, nitrous oxide oxidizer, solid fuel grain, built at UCF.",
-      "overview": "KnightsRP is UCF's student hybrid propulsion program. We design, manufacture, and test hybrid rocket motors from scratch, combining a liquid oxidizer (nitrous oxide) with a solid fuel grain to produce a throttleable, re-ignitable propulsion system.",
-      "detail1Title": "Propellant System",
-      "detail1": "Nitrous oxide oxidizer with a cast HTPB solid fuel grain. Hybrid architecture gives the controllability of liquids with the simplicity of solids, no pumps, no pre-mixing.",
-      "detail2Title": "Motor Design",
-      "detail2": "Custom injector head, combustion chamber, and nozzle designed and manufactured in-house. CFD-optimized injector pattern for stable combustion and efficient oxidizer atomization.",
-      "detail3Title": "Test Program",
-      "detail3": "Full static fire test campaign on a custom-built test stand. Data acquisition covers chamber pressure, thrust, temperature, and mass flow, all feeding back into the next design iteration.",
-      "tags": [
-        "Hybrid Propulsion",
-        "Nitrous Oxide",
-        "HTPB",
-        "Combustion",
-        "Injector Design",
-        "Test Stand",
-        "CFD"
-      ]
-    },
     "phantom": {
       "hero": "Phantom Ground Station",
       "eyebrow": "KnightsRP · Boom Prize · Mach 1",
@@ -252,6 +231,43 @@
         "Fabrication",
         "Wearables",
         "Design"
+      ]
+    },
+    "harper": {
+      "hero": "Harper",
+      "eyebrow": "HPR Level 1 · Certification Rocket",
+      "tagline": "My Level 1 high-power certification rocket.",
+      "overview": "Harper is the rocket I designed, built, and flew for my high-power rocketry Level 1 certification: the first step into H and I class motors.",
+      "detail1Title": "Design",
+      "detail1": "Fill in at /admin: design goals, simulation, and stability.",
+      "detail2Title": "Build",
+      "detail2": "Fill in at /admin: construction, materials, and assembly.",
+      "detail3Title": "Flight",
+      "detail3": "Fill in at /admin: motor, altitude, recovery, and the certification result.",
+      "tags": [
+        "High-Power Rocketry",
+        "L1 Certification",
+        "Airframe Design",
+        "Recovery"
+      ]
+    },
+    "charlotte": {
+      "hero": "Charlotte",
+      "eyebrow": "HPR Level 2 · Certification Rocket",
+      "tagline": "My Level 2 high-power certification rocket.",
+      "overview": "Charlotte is the rocket I designed, built, and flew for my high-power rocketry Level 2 certification, stepping up to J, K, and L class motors after Harper.",
+      "detail1Title": "Design",
+      "detail1": "Fill in at /admin: design goals, simulation, and stability.",
+      "detail2Title": "Build",
+      "detail2": "Fill in at /admin: construction, materials, and assembly.",
+      "detail3Title": "Flight",
+      "detail3": "Fill in at /admin: motor, altitude, recovery, and the certification result.",
+      "tags": [
+        "High-Power Rocketry",
+        "L2 Certification",
+        "Airframe Design",
+        "Avionics",
+        "Recovery"
       ]
     }
   },

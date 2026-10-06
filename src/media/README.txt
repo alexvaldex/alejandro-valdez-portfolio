@@ -1,6 +1,6 @@
 DROP-IN MEDIA (no code edits needed, the site picks files up automatically)
 
-One folder per project:  home, odysseus, sunflower, knightsrp, monkeybar, valdex, restem, fsi
+One folder per project:  home, odysseus, monkeybar, sunflower, harper, charlotte, vxtelemetry, phantom, prostheticarm, prostheticknee, ironarmor, valdex, fsi, restem
 
   hero.jpg / hero.mp4        full-screen background at the top of the page (and the home page block)
   01-static-fire.jpg         gallery items, shown in filename order

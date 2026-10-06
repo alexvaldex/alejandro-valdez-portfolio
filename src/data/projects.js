@@ -41,14 +41,24 @@ export const projects = [
     ],
   },
   {
-    id: 'knightsrp', category: 'rockets', type: 'model', kind: 'Hybrid Propulsion', year: '2025', status: 'Static fire campaign',
-    stats: [['N₂O', 'oxidizer'], ['HTPB', 'fuel grain'], ['100%', 'built in-house']],
+    id: 'harper', category: 'rockets', type: 'model', kind: 'HPR Level 1', year: '2025', status: 'L1 certified',
+    stats: [['L1', 'certification'], ['H / I', 'motor class'], ['Recovered', 'flight-ready']],
     scenes: [
-      ['Propellant', 'N₂O + HTPB hybrid', 'Nitrous oxide oxidizer with a cast HTPB grain. Throttleable, re-ignitable, built in-house.'],
-      ['Hardware', 'Motor from scratch', 'CFD-optimized injector, combustion chamber, and nozzle, all designed and machined by the team.'],
-      ['Testing', 'Static fire campaign', 'Chamber pressure, thrust, temperature, and mass flow data feeding every iteration.'],
+      ['Certification', 'Level 1', 'My first high-power rocket and the flight that earned my L1 certification.'],
+      ['Airframe', 'Designed and built', 'Fill in: airframe, fins, and the materials you chose.'],
+      ['Recovery', 'Brought home safe', 'Fill in: recovery setup and how the flight went.'],
     ],
   },
+  {
+    id: 'charlotte', category: 'rockets', type: 'model', kind: 'HPR Level 2', year: '2026', status: 'L2 certified',
+    stats: [['L2', 'certification'], ['J / K / L', 'motor class'], ['Higher', 'and faster']],
+    scenes: [
+      ['Certification', 'Level 2', 'The step up: a bigger motor, a tougher airframe, and the flight for my L2.'],
+      ['Airframe', 'Built for more power', 'Fill in: airframe, fins, and what changed from Harper.'],
+      ['Avionics', 'Recovery and electronics', 'Fill in: altimeter, deployment, and how the flight went.'],
+    ],
+  },
+
   { id: 'vxtelemetry', category: 'software', type: 'gallery', kind: 'Ground Station', year: '2026', status: 'v0.9 shipped', repo: 'Valdex_Telemetry',
     stats: [['3', 'platforms'], ['Any', 'flight computer'], ['Live', '3D vehicle']] },
   { id: 'phantom', category: 'software', type: 'gallery', kind: 'Mission Control', year: '2026', status: 'Boom Prize', repo: 'Boom-KnightsRP-Flight-Software',

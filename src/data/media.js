@@ -5,7 +5,7 @@
 //   src/media/<project>/02-launch-day.mp4        caption comes from the filename
 //   src/media/<project>/model.glb | .obj+.mtl | .stl   3D model for the scroll scene
 //
-// <project> is one of: home, valdex, restem, sunflower, odysseus, fsi, monkeybar, knightsrp
+// <project> is the project id from src/data/projects.js (e.g. odysseus, harper, charlotte)
 
 const files = import.meta.glob(
   '/src/media/**/*.{jpg,jpeg,png,webp,avif,gif,mp4,webm,mov,glb,gltf,obj,mtl,stl,JPG,JPEG,PNG,MP4,MOV}',
