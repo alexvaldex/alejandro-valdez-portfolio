@@ -13,9 +13,44 @@ import { MTLLoader } from 'three/addons/loaders/MTLLoader.js'
 
 const FIT = 5 // world units the model's longest side is scaled to
 
+// CAD exports sometimes include loose bodies parked away from the assembly.
+// Group meshes whose (slightly padded) boxes touch, keep the biggest group,
+// and hide the rest so the camera frames the real product.
+function mainAssemblyBox(object) {
+  object.updateMatrixWorld(true)
+  const meshes = []
+  object.traverse(o => { if (o.isMesh) meshes.push({ o, box: new THREE.Box3().setFromObject(o) }) })
+  const all = new THREE.Box3().setFromObject(object)
+  if (meshes.length < 2) return all
+
+  const pad = all.getSize(new THREE.Vector3()).length() * 0.02
+  const parent = meshes.map((_, i) => i)
+  const find = i => (parent[i] === i ? i : (parent[i] = find(parent[i])))
+  const padded = meshes.map(m => m.box.clone().expandByScalar(pad))
+  for (let i = 0; i < meshes.length; i++)
+    for (let j = i + 1; j < meshes.length; j++)
+      if (padded[i].intersectsBox(padded[j])) parent[find(i)] = find(j)
+
+  const groups = {}
+  meshes.forEach((m, i) => {
+    const g = (groups[find(i)] ||= { box: new THREE.Box3(), items: [], vol: 0 })
+    g.box.union(m.box); g.items.push(m.o)
+    const v = m.box.getSize(new THREE.Vector3()); g.vol += v.x * v.y * v.z
+  })
+  const sorted = Object.values(groups).sort((a, b) => b.vol - a.vol)
+  sorted.slice(1).forEach(g => g.items.forEach(o => { o.visible = false; o.userData.detached = true }))
+  return sorted[0].box
+}
+
+function assemblyBox(root) {
+  const box = new THREE.Box3()
+  root.traverse(o => { if (o.isMesh && !o.userData.detached) box.union(new THREE.Box3().setFromObject(o)) })
+  return box
+}
+
 // Center, scale, and lay elongated models (rockets) on their side like a product shot
 function normalize(object) {
-  const box = new THREE.Box3().setFromObject(object)
+  const box = mainAssemblyBox(object)
   const size = box.getSize(new THREE.Vector3())
   const wrap = new THREE.Group()
   const inner = new THREE.Group()
@@ -121,10 +156,10 @@ function Model({ model, onReady }) {
 // clipping plane, and an explode direction pointing away from the model center.
 function prepareParts(root, plane) {
   root.updateMatrixWorld(true)
-  const rootCenter = new THREE.Box3().setFromObject(root).getCenter(new THREE.Vector3())
+  const rootCenter = assemblyBox(root).getCenter(new THREE.Vector3())
   const parts = []
   root.traverse(o => {
-    if (!o.isMesh) return
+    if (!o.isMesh || o.userData.detached) return
     o.material = Array.isArray(o.material) ? o.material.map(m => m.clone()) : o.material.clone()
     ;[].concat(o.material).forEach(m => { m.clippingPlanes = [plane]; m.clipShadows = true; m.side = THREE.DoubleSide })
     const worldCenter = new THREE.Box3().setFromObject(o).getCenter(new THREE.Vector3())
@@ -149,7 +184,7 @@ function Explorer({ groupRef, root, active, cut, explode, zoomReq, onHide }) {
     const g = groupRef.current
     const saved = g.rotation.clone()
     g.rotation.set(0, 0, 0); g.updateMatrixWorld(true)
-    const box = new THREE.Box3().setFromObject(root)
+    const box = assemblyBox(root)
     g.rotation.copy(saved); g.updateMatrixWorld(true)
     return [box.min.z, box.max.z]
   }, [root, groupRef])
@@ -295,7 +330,7 @@ export default function ScrollModel({ title, scenes = [], model, projectId }) {
   const titleOpacity = useTransform(scrollYProgress, [0, 0.5 / segments, 1 / segments], [1, 1, 0])
   const titleScale = useTransform(scrollYProgress, [0, 1 / segments], [1, 0.92])
   const bar = useTransform(scrollYProgress, [0, 1], [0, 1])
-  const partCount = useMemo(() => { let n = 0; root?.traverse(o => { if (o.isMesh) n++ }); return n }, [root])
+  const partCount = useMemo(() => { let n = 0; root?.traverse(o => { if (o.isMesh && !o.userData.detached) n++ }); return n }, [root])
 
   const exit = () => { setExplore(false); setCut(0); setExplode(0); setHidden([]); document.body.style.cursor = '' }
   const resetParts = () => { hidden.forEach(m => { m.visible = true }); setHidden([]) }
