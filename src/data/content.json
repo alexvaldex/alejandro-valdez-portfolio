@@ -1,18 +1,18 @@
 {
   "home": {
     "name": "Alejandro Valdez",
-    "eyebrow": "Aerospace Engineering · UCF · Founder",
+    "eyebrow": "Aerospace Engineering · UCF",
     "headline": "I build hardware that flies.",
-    "bio": "Aerospace engineering student at UCF, HPR-certified rocketeer, and founder of Valdex LLC and ReSTEM. I design avionics from scratch, lead competition rocket teams, and push engineering into real hardware.",
+    "bio": "Aerospace engineer in the making. I design avionics from scratch, write the software that flies them, and lead the teams that put them in the sky.",
     "socials": {
       "email": "alex.valdez.eng@gmail.com",
       "linkedin": "https://www.linkedin.com/in/alejandro-valdez15",
       "github": "https://github.com/alexvaldex"
     },
-    "available": "Open to internships and co-ops in aerospace, propulsion, and avionics"
+    "available": "Open to aerospace, propulsion & avionics internships"
   },
   "footer": {
-    "tagline": "Built entirely by Alejandro Valdez, aerospace engineering student, founder, and builder.",
+    "tagline": "Designed, built, and flown by Alejandro Valdez.",
     "email": "alex.valdez.eng@gmail.com",
     "linkedin": "https://www.linkedin.com/in/alejandro-valdez15",
     "github": "https://github.com/alexvaldex"
@@ -21,7 +21,7 @@
     "valdex": {
       "hero": "Valdex LLC",
       "eyebrow": "Avionics · Telemetry · Hardware",
-      "tagline": "Custom flight computers and telemetry systems for high-power rocketry, built from the ground up.",
+      "tagline": "Flight computers and telemetry, designed and built in-house.",
       "overview": "Valdex LLC is my engineering company focused on designing and manufacturing avionics hardware for high-power rocketry. Every board is designed in KiCad, fabricated, hand-assembled, and flown.",
       "detail1Title": "Flight Computer",
       "detail1": "Custom ARM-based flight computer with barometric altimeter, IMU, and dual-deploy pyrotechnic outputs. Designed for reliability under 20G launch loads.",
@@ -42,7 +42,7 @@
     "restem": {
       "hero": "ReSTEM",
       "eyebrow": "Nonprofit · Education · Community",
-      "tagline": "Expanding STEM access through real engineering programs, hands-on builds, and community partnerships.",
+      "tagline": "Real engineering, in the hands of the next generation.",
       "overview": "ReSTEM is a nonprofit I founded to close the gap between students with big ideas and the real engineering education they need to pursue them.",
       "detail1Title": "Programs",
       "detail1": "Hands-on workshops, rocketry builds, electronics projects, and engineering design challenges that put real tools in students' hands.",
@@ -59,8 +59,8 @@
     },
     "sunflower": {
       "hero": "Sunflower Payload",
-      "eyebrow": "Payload · IREC · Spaceport America",
-      "tagline": "Scientific payload that flew and competed at IREC 2026, Spaceport America, New Mexico.",
+      "eyebrow": "Scientific Payload · IREC 2026",
+      "tagline": "Flown at Spaceport America. Open source down to the last screw.",
       "overview": "Sunflower is the SHPE UCF payload that flew and competed at the 2026 ESRA Intercollegiate Rocket Engineering Competition. I co-led the build end to end: structure, sensor electronics, and the ESP-IDF flight firmware. The full design, code, and bill of materials are open source.",
       "detail1Title": "Payload Mission",
       "detail1": "Atmospheric data collection at apogee, pressure, temperature, humidity, and particulate sampling during the 10,000-ft ascent and descent.",
@@ -80,8 +80,8 @@
     },
     "odysseus": {
       "hero": "Odysseus",
-      "eyebrow": "Competition Rocket · IREC · 10,000 ft",
-      "tagline": "Student-built 10,000 ft competition rocket targeting IREC 2026 at Spaceport America, New Mexico.",
+      "eyebrow": "Competition Rocket · IREC 2026",
+      "tagline": "Ten thousand feet. Built by students, engineered like a flagship.",
       "overview": "Odysseus is UCF's competition vehicle for the 2026 Intercollegiate Rocket Engineering Competition. A full-scale, student-designed and built rocket targeting 10,000 ft AGL under FAA and NAR safety frameworks.",
       "detail1Title": "Propulsion",
       "detail1": "Commercial high-power motor with custom forward and aft airframe integration. Motor selection optimized for target apogee under competition weight budget.",
@@ -101,7 +101,7 @@
     "fsi": {
       "hero": "Florida Space Institute",
       "eyebrow": "Research · UCF · Aerospace",
-      "tagline": "Engineering and research work conducted through UCF's Florida Space Institute.",
+      "tagline": "Research at the edge of Florida's space coast.",
       "overview": "The Florida Space Institute at UCF is one of Florida's premier space research centers. Work here connects directly to real aerospace engineering projects and research initiatives.",
       "detail1Title": "Research Focus",
       "detail1": "Aerospace systems engineering with emphasis on small satellite subsystems, propulsion analysis, and mission design methodology.",
@@ -120,7 +120,7 @@
     "monkeybar": {
       "hero": "Monkey Bar",
       "eyebrow": "Guided Rocketry · Navigation · R&D",
-      "tagline": "Two-stage guided rocket: a TVC booster that lands itself and a canard-steered dart that aims for a target.",
+      "tagline": "Launch it. Land it. Aim it. A two-stage guided rocket.",
       "overview": "Monkey Bar sets out to launch, land, and aim a rocket. The booster carries two thrust vector control mounts to land under control, while the upper stage, Dart, uses canard fins to hit a ground target, scored on accuracy over speed. A Yagi-linked ground station and a dedicated launch system round out the program.",
       "detail1Title": "Guided Rocket",
       "detail1": "Two stages. The booster uses dual TVC mounts for a controlled landing; Dart uses canards to steer onto a target for a measurable yield.",
@@ -141,7 +141,7 @@
     "phantom": {
       "hero": "Phantom Ground Station",
       "eyebrow": "KnightsRP · Boom Prize · Mach 1",
-      "tagline": "Mission-control software for Phantom, KnightsRP's entry to fly the first amateur RC aircraft past Mach 1.",
+      "tagline": "Mission control for a Mach 1 attempt.",
       "overview": "A native desktop ground station built for the Boom Prize: the first amateur RC aircraft to exceed Mach 1, twice, on the same day. It ingests live LoRa telemetry over USB serial, or runs the real mission profile in simulation, behind one source interface so the dashboard, alerts, and abort logic never change.",
       "detail1Title": "Flight Deck",
       "detail1": "Mach as the largest element on screen, plus airspeed, altitude, attitude, dynamic pressure with a redline, GPS ground track, G-load, and propulsion health.",
@@ -161,7 +161,7 @@
     "vxtelemetry": {
       "hero": "VX Telemetry",
       "eyebrow": "Valdex LLC · Ground Station Software",
-      "tagline": "A universal rocketry ground station. Plug in any flight computer and your data appears live on a mission-control dashboard.",
+      "tagline": "Plug in any flight computer. Watch the mission unfold live.",
       "overview": "VX Telemetry is the flagship Valdex product: hardware-agnostic ground-station software for high-power rocketeers and competition teams up to L3. It recognizes incoming streams automatically, and flies your own CAD model live from telemetry attitude.",
       "detail1Title": "Mission Control",
       "detail1": "Mission clock, flight-phase track from pad to landing, a GO/NO-GO board, drag-aware apogee prediction, and touchdown ETA.",
@@ -182,7 +182,7 @@
     "prostheticarm": {
       "hero": "Prosthetic Arm",
       "eyebrow": "The Forge · Bionics",
-      "tagline": "A custom prosthetic arm, designed and built from scratch.",
+      "tagline": "Engineering that moves with the person wearing it.",
       "overview": "Fill in at /admin: the story of this build, who it is for, and what makes it work.",
       "detail1Title": "Design",
       "detail1": "Fill in at /admin: design goals and constraints.",
@@ -200,7 +200,7 @@
     "prostheticknee": {
       "hero": "Prosthetic Knee",
       "eyebrow": "The Forge · Bionics",
-      "tagline": "A custom prosthetic knee, designed and built from scratch.",
+      "tagline": "A knee rebuilt from first principles.",
       "overview": "Fill in at /admin: the story of this build, who it is for, and what makes it work.",
       "detail1Title": "Design",
       "detail1": "Fill in at /admin: design goals and constraints.",
@@ -218,7 +218,7 @@
     "ironarmor": {
       "hero": "Iron Armor",
       "eyebrow": "The Forge · Wearable Armor",
-      "tagline": "A full suit of wearable armor, cut, formed, and assembled by hand.",
+      "tagline": "Cut, formed, and fitted by hand.",
       "overview": "Fill in at /admin: the concept behind the suit and how it came together.",
       "detail1Title": "Design",
       "detail1": "Fill in at /admin: design goals and constraints.",
@@ -235,29 +235,30 @@
     },
     "harper": {
       "hero": "Harper",
-      "eyebrow": "HPR Level 1 · Certification Rocket",
-      "tagline": "My Level 1 high-power certification rocket.",
-      "overview": "Harper is the rocket I designed, built, and flew for my high-power rocketry Level 1 certification: the first step into H and I class motors.",
-      "detail1Title": "Design",
-      "detail1": "Fill in at /admin: design goals, simulation, and stability.",
-      "detail2Title": "Build",
-      "detail2": "Fill in at /admin: construction, materials, and assembly.",
-      "detail3Title": "Flight",
-      "detail3": "Fill in at /admin: motor, altitude, recovery, and the certification result.",
+      "eyebrow": "HPR Level 1 · Certification Program",
+      "tagline": "The road to Level 1. Two attempts, one rocket philosophy.",
+      "overview": "Harper is my Level 1 high-power certification rocket. The first attempt, flown on an H169, did not earn the certification. Every lesson from that flight is going into attempt two.",
+      "detail1Title": "Attempt 1 · H169",
+      "detail1": "The first design and first flight on an H169 motor. It did not certify. Fill in at /admin: what happened and what you learned.",
+      "detail2Title": "What changed",
+      "detail2": "Fill in at /admin: the design changes between attempt one and attempt two.",
+      "detail3Title": "Attempt 2",
+      "detail3": "Coming soon: the revised Harper and its certification flight.",
       "tags": [
         "High-Power Rocketry",
         "L1 Certification",
+        "H169",
         "Airframe Design",
-        "Recovery"
+        "Iteration"
       ]
     },
     "charlotte": {
       "hero": "Charlotte",
-      "eyebrow": "HPR Level 2 · Certification Rocket",
-      "tagline": "My Level 2 high-power certification rocket.",
-      "overview": "Charlotte is the rocket I designed, built, and flew for my high-power rocketry Level 2 certification, stepping up to J, K, and L class motors after Harper.",
-      "detail1Title": "Design",
-      "detail1": "Fill in at /admin: design goals, simulation, and stability.",
+      "eyebrow": "HPR Level 2 · Certification Program",
+      "tagline": "The next altitude. Built for Level 2.",
+      "overview": "Charlotte is my Level 2 high-power rocket, now on its fifth design revision and working toward certification on J, K, and L class motors.",
+      "detail1Title": "Design · V5",
+      "detail1": "Fifth revision of the airframe. Fill in at /admin: what drove each revision.",
       "detail2Title": "Build",
       "detail2": "Fill in at /admin: construction, materials, and assembly.",
       "detail3Title": "Flight",
@@ -272,7 +273,7 @@
     }
   },
   "about": {
-    "intro": "I am an aerospace engineering student at the University of Central Florida who learns by building. I design avionics, write flight and ground software, lead competition rocketry teams, and run two organizations: Valdex LLC and the ReSTEM nonprofit.",
+    "intro": "Aerospace engineering student at UCF. I learn by building: avionics, flight software, rockets, and the teams behind them. Founder of Valdex LLC and the ReSTEM nonprofit.",
     "experience": [
       {
         "when": "2026",

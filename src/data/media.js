@@ -43,13 +43,13 @@ export function getMedia(project) {
   const heroFile = visual.find(f => /^hero\./i.test(f.name))
   const gallery = visual.filter(f => f !== heroFile).map(asItem)
 
-  const modelFile = list.find(f => MODEL.test(f.name))
-  let model = null
-  if (modelFile) {
-    const base = modelFile.name.replace(/\.[^.]+$/, '')
-    const mtl = list.find(f => f.name === `${base}.mtl`)
-    model = { url: modelFile.url, ext: modelFile.name.split('.').pop().toLowerCase(), mtl: mtl?.url }
-  }
+  const models = list.filter(f => MODEL.test(f.name)).map(f => {
+    const base = f.name.replace(/\.[^.]+$/, '')
+    const mtl = list.find(m => m.name === `${base}.mtl`)
+    return { url: f.url, base, ext: f.name.split('.').pop().toLowerCase(), mtl: mtl?.url }
+  })
+  // newest version (last alphabetically, e.g. attempt-2 after attempt-1) represents the project on cards
+  const model = models[models.length - 1] || null
 
-  return { hero: heroFile ? asItem(heroFile) : null, gallery, model }
+  return { hero: heroFile ? asItem(heroFile) : null, gallery, model, models }
 }

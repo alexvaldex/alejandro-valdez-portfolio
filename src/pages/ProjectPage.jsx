@@ -1,6 +1,6 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import Media from '../components/Media'
 import Reveal from '../components/Reveal'
 import ScrollModel from '../components/ScrollModel'
@@ -53,6 +53,13 @@ export default function ProjectPage() {
   if (!project) return <Navigate to="/" replace />
 
   const media = getMedia(id)
+  const [versionIdx, setVersionIdx] = useState(() => {
+    const v = project?.versions || []
+    const i = v.findIndex(x => media.models.some(m => m.base === x.file))
+    return i < 0 ? 0 : i
+  })
+  const version = project?.versions?.[versionIdx]
+  const sceneModel = version ? media.models.find(m => m.base === version.file) || null : media.model
   const next = projects[(projects.indexOf(project) + 1) % projects.length]
   const nextC = useProjectContent(next.id)
   const details = [1, 2, 3].map(n => [c[`detail${n}Title`], c[`detail${n}`]]).filter(([t]) => t)
@@ -75,8 +82,24 @@ export default function ProjectPage() {
         <Reveal as="p" className="body" delay={0.1}>{c.overview}</Reveal>
       </section>
 
-      {project.type === 'model' && (media.model || project.category === 'rockets') && (
-        <ScrollModel title={c.hero} scenes={project.scenes} model={media.model} projectId={id} />
+      {project.versions && (
+        <div className="versions">
+          <p className="eyebrow">Versions</p>
+          <div>
+            {project.versions.map((v, i) => {
+              const ready = media.models.some(m => m.base === v.file)
+              return (
+                <button key={v.label} className={i === versionIdx ? 'on' : ''} disabled={!ready} onClick={() => setVersionIdx(i)}>
+                  <span>{v.label}</span><small>{v.note}</small>
+                </button>
+              )
+            })}
+          </div>
+        </div>
+      )}
+
+      {project.type === 'model' && (sceneModel || project.category === 'rockets') && (
+        <ScrollModel key={sceneModel?.url || 'none'} title={version ? `${c.hero} · ${version.label}` : c.hero} scenes={project.scenes} model={sceneModel} projectId={id} />
       )}
 
       <Gallery items={media.gallery} />

@@ -5,11 +5,11 @@
 export const GITHUB_USER = 'alexvaldex'
 
 export const categories = [
-  { id: 'rockets', label: 'Rockets', blurb: 'Flight hardware: vehicles, payloads, and propulsion.' },
-  { id: 'software', label: 'Software', blurb: 'Ground stations, flight software, and mission control.' },
-  { id: 'forge', label: 'The Forge', blurb: 'Hardware built by hand: bionics, armor, and everything in between.' },
-  { id: 'arsenal', label: 'Arsenal', blurb: 'Recreating military technology to understand how it works.' },
-  { id: 'impact', label: 'Impact', blurb: 'Research, ventures, and community.' },
+  { id: 'rockets', label: 'Rockets', blurb: 'Vehicles, payloads, and the road to certification.' },
+  { id: 'software', label: 'Software', blurb: 'Mission control, written from scratch.' },
+  { id: 'forge', label: 'The Forge', blurb: 'Built by hand. Bionics, armor, and everything between.' },
+  { id: 'arsenal', label: 'Arsenal', blurb: 'Reverse-engineering the machines that shaped history.' },
+  { id: 'impact', label: 'Impact', blurb: 'Research, ventures, and the people they reach.' },
 ]
 
 export const projects = [
@@ -41,19 +41,24 @@ export const projects = [
     ],
   },
   {
-    id: 'harper', category: 'rockets', type: 'model', kind: 'HPR Level 1', year: '2025', status: 'L1 certified',
-    stats: [['L1', 'certification'], ['H / I', 'motor class'], ['Recovered', 'flight-ready']],
+    id: 'harper', category: 'rockets', type: 'model', kind: 'HPR Level 1', year: '2026', status: 'Working toward L1',
+    stats: [['H169', 'attempt 1 motor'], ['2', 'attempts'], ['L1', 'in progress']],
+    // Each version gets its own 3D model: file is matched against filenames in src/media/harper/
+    versions: [
+      { label: 'Attempt 1', file: 'harper-attempt-1', note: 'H169 · did not certify' },
+      { label: 'Attempt 2', file: 'harper-attempt-2', note: 'Coming soon' },
+    ],
     scenes: [
-      ['Certification', 'Level 1', 'My first high-power rocket and the flight that earned my L1 certification.'],
+      ['Attempt 1', 'First flight, H169', 'The first Harper and the first shot at Level 1. It did not certify, and that flight taught the most.'],
       ['Airframe', 'Designed and built', 'Fill in: airframe, fins, and the materials you chose.'],
-      ['Recovery', 'Brought home safe', 'Fill in: recovery setup and how the flight went.'],
+      ['Next', 'Attempt two', 'Every lesson from the first flight, built into the next one.'],
     ],
   },
   {
-    id: 'charlotte', category: 'rockets', type: 'model', kind: 'HPR Level 2', year: '2026', status: 'L2 certified',
-    stats: [['L2', 'certification'], ['J / K / L', 'motor class'], ['Higher', 'and faster']],
+    id: 'charlotte', category: 'rockets', type: 'model', kind: 'HPR Level 2', year: '2026', status: 'Working toward L2',
+    stats: [['V5', 'design revision'], ['J / K / L', 'motor class'], ['L2', 'in progress']],
     scenes: [
-      ['Certification', 'Level 2', 'The step up: a bigger motor, a tougher airframe, and the flight for my L2.'],
+      ['Level 2', 'The step up', 'A bigger motor, a tougher airframe, and five revisions to get it right.'],
       ['Airframe', 'Built for more power', 'Fill in: airframe, fins, and what changed from Harper.'],
       ['Avionics', 'Recovery and electronics', 'Fill in: altimeter, deployment, and how the flight went.'],
     ],

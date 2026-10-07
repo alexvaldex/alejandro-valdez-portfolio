@@ -13,7 +13,7 @@ export default function Media({ item, label }) {
   }, [item])
 
   if (!item) {
-    return <div className="placeholder"><span>{label}</span></div>
+    return <div className="placeholder">{import.meta.env.DEV && label && <span>{label}</span>}</div>
   }
   if (item.type === 'video') {
     return <video ref={ref} src={item.url} muted loop playsInline preload="metadata" />

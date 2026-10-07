@@ -289,7 +289,7 @@ function Caption({ progress, range, scene, index }) {
   const y = useTransform(progress, [a, b], [60, -60])
   const right = index % 2 === 1
   return (
-    <motion.div style={{
+    <motion.div className="sceneCaption" style={{
       opacity, y, position: 'absolute', bottom: '12vh', maxWidth: 440, zIndex: 3, pointerEvents: 'none',
       [right ? 'right' : 'left']: 'var(--gutter)', textAlign: right ? 'right' : 'left',
     }}>
@@ -390,7 +390,7 @@ export default function ScrollModel({ title, scenes = [], model, projectId }) {
           ))}
         </>}
 
-        {!model && (
+        {!model && import.meta.env.DEV && (
           <p className="eyebrow" style={{ position: 'absolute', top: 104, right: 'var(--gutter)', fontSize: 11, opacity: 0.4, zIndex: 3 }}>
             Placeholder · drop a .glb / .obj+.mtl / .stl in src/media/{projectId}/
           </p>
@@ -413,7 +413,7 @@ export default function ScrollModel({ title, scenes = [], model, projectId }) {
             <button style={{ ...toolBtn, background: '#fff', color: '#000' }} onClick={exit}>Done</button>
           </div>
         ) : (
-          <button className="btn" onClick={() => setExplore(true)} style={{ position: 'absolute', right: 'var(--gutter)', top: 110, zIndex: 4, minWidth: 0, padding: '12px 20px' }}>
+          <button className="btn exploreBtn" onClick={() => setExplore(true)}>
             Explore in 3D
           </button>
         )}
