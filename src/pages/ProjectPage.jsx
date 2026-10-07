@@ -23,7 +23,7 @@ function Hero({ c, project, media }) {
         <Media item={media.hero} label={`src/media/${project.id}/hero.jpg or hero.mp4`} />
       </motion.div>
       <motion.div className="panelContent" style={{ opacity: fade }}>
-        <Reveal as="p" className="eyebrow">{c.eyebrow} · {project.status}</Reveal>
+        <Reveal as="p" className="eyebrow">{c.eyebrow}{project.status && !c.eyebrow?.includes(project.status.split(' · ').pop()) ? ` · ${project.status}` : ''}</Reveal>
         <Reveal as="h1" className="display" delay={0.1}>{c.hero}</Reveal>
         <Reveal as="p" className="body" delay={0.2}>{c.tagline}</Reveal>
       </motion.div>

@@ -30,7 +30,7 @@ export default function CategoryPage({ id }) {
         return (
           <section className="panel" key={p.id}>
             <div className="panelMedia"><Media item={m.hero || m.gallery[0]} label={m.model ? '' : `src/media/${p.id}/hero.jpg`} /></div>
-            {m.model && <ModelPreview model={m.model} fill={0.85} className="panelModel" />}
+            {m.model && !m.hero && <ModelPreview model={m.model} fill={0.85} className="panelModel" />}
             <div className="panelContent">
               <Reveal as="p" className="eyebrow">{p.kind} · {p.status}</Reveal>
               <Reveal as="h2" className="display" delay={0.08}>{pc.hero}</Reveal>
