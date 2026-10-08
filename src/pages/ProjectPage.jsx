@@ -9,6 +9,7 @@ import { getMedia } from '../data/media'
 import { RepoCard } from '../components/GitHubPanel'
 import RepoExplorer from '../components/RepoExplorer'
 import SafeBoundary from '../components/SafeBoundary'
+import VXShowcase from '../components/VXShowcase'
 import { useProjectContent } from '../hooks/useContent'
 
 function Hero({ c, project, media }) {
@@ -62,6 +63,7 @@ export default function ProjectPage() {
   const sceneModel = version ? media.models.find(m => m.base === version.file) || null : media.model
   const next = projects[(projects.indexOf(project) + 1) % projects.length]
   const nextC = useProjectContent(next.id)
+  const relatedC = useProjectContent(project.related)
   const details = [1, 2, 3].map(n => [c[`detail${n}Title`], c[`detail${n}`]]).filter(([t]) => t)
 
   return (
@@ -102,6 +104,8 @@ export default function ProjectPage() {
         <ScrollModel key={sceneModel?.url || 'none'} title={version ? `${c.hero} · ${version.label}` : c.hero} scenes={project.scenes} model={sceneModel} projectId={id} />
       )}
 
+      {project.showcase === 'vx' && <SafeBoundary><VXShowcase /></SafeBoundary>}
+
       <Gallery items={media.gallery} />
 
       <section className="overview" style={{ paddingBottom: 80 }}>
@@ -117,6 +121,14 @@ export default function ProjectPage() {
       <SafeBoundary fallback={<RepoCard name={project.repo} />}>
         {project.buildKit ? <RepoExplorer name={project.repo} /> : <RepoCard name={project.repo} />}
       </SafeBoundary>
+
+      {project.related && (
+        <Link to={`/projects/${project.related}`} className="related">
+          <p className="eyebrow">Part of the same mission</p>
+          <h3>{relatedC.hero} →</h3>
+          <p className="body">{relatedC.tagline}</p>
+        </Link>
+      )}
 
       <Link to={`/projects/${next.id}`} className="next">
         <p className="eyebrow" style={{ marginBottom: 18 }}>Next project</p>
