@@ -3,13 +3,14 @@
     "name": "Alejandro Valdez",
     "eyebrow": "Aerospace Engineering · UCF",
     "headline": "I build hardware that flies.",
-    "bio": "Aerospace engineer in the making. I design avionics from scratch, write the software that flies them, and lead the teams that put them in the sky.",
+    "bio": "I'm an aerospace engineering student at UCF. I design hardware, write the software that flies it, and take it to the desert to see if it works.",
     "socials": {
       "email": "alex.valdez.eng@gmail.com",
       "linkedin": "https://www.linkedin.com/in/alejandro-valdez15",
       "github": "https://github.com/alexvaldex"
     },
-    "available": "Open to aerospace, propulsion & avionics internships"
+    "available": "Open to aerospace, propulsion & avionics internships",
+    "linkedinPosts": []
   },
   "footer": {
     "tagline": "Designed, built, and flown by Alejandro Valdez.",
@@ -20,99 +21,95 @@
   "projects": {
     "valdex": {
       "hero": "Valdex LLC",
-      "eyebrow": "Avionics · Telemetry · Hardware",
-      "tagline": "Flight computers and telemetry, designed and built in-house.",
-      "overview": "Valdex LLC is my engineering company. I design flight computers and telemetry systems for high-power rocketry: every board laid out in KiCad, fabricated, hand-assembled, and flown. VX Telemetry is our flagship software.",
-      "detail1Title": "Flight Computer",
-      "detail1": "An ARM-based flight computer with a barometric altimeter, IMU, and dual-deploy pyro outputs, designed to survive 20G launches.",
-      "detail2Title": "Telemetry System",
-      "detail2": "A LoRa ground station with live GPS tracking, altitude plotting, and a recovery beacon. Range tested to 8 km line of sight.",
-      "detail3Title": "Ground Software",
-      "detail3": "VX Telemetry: the mission-control software I wish every team had. Cross-platform, hardware-agnostic, and built for launch day.",
+      "eyebrow": "Company · Founder",
+      "tagline": "Ground stations and flight hardware for the rocketry community.",
+      "overview": "Valdex LLC is my engineering company. Our flagship is VX Telemetry, a ground station that runs on macOS, Windows, and Linux and works with almost any flight computer. Next up is the VX hardware line: a flight computer, a ground receiver, and a pyro deck, designed so every sensor maps straight into the software.",
+      "detail1Title": "VX Telemetry",
+      "detail1": "Shipped. Live mission control, a 3D vehicle that flies from your data, and a simulator so you can rehearse before launch day.",
+      "detail2Title": "VX hardware",
+      "detail2": "Three reference boards in development: Board A flight computer, Board B USB LoRa ground receiver, and Board C eight-channel pyro deck.",
+      "detail3Title": "Custom builds",
+      "detail3": "Mission-control software built for specific vehicles, like the ground station for KnightsRP's Phantom Boom Prize jet.",
       "tags": [
-        "PCB Design",
-        "KiCad",
-        "ARM Cortex",
-        "LoRa Telemetry",
-        "C/C++",
-        "Python",
-        "GPS Tracking"
+        "Product Development",
+        "TypeScript",
+        "Rust · Tauri",
+        "Electronics Design",
+        "LoRa",
+        "Founder"
       ]
     },
     "restem": {
       "hero": "ReSTEM",
-      "eyebrow": "Nonprofit · Education · Community",
-      "tagline": "Real engineering, in the hands of the next generation.",
-      "overview": "I started ReSTEM because talent is everywhere and access isn't. We put real engineering tools in students' hands and make sure every program ends with something they built themselves.",
-      "detail1Title": "Programs",
-      "detail1": "Hands-on workshops: rocketry builds, electronics projects, and design challenges with real tools.",
-      "detail2Title": "Reach",
-      "detail2": "Partnerships with Central Florida schools, libraries, and engineers. Over 200 students reached, with a focus on underrepresented communities.",
-      "detail3Title": "Mission",
-      "detail3": "No slideshows. We build. Every student walks out with something they made.",
+      "eyebrow": "Nonprofit · Founder",
+      "tagline": "A nonprofit I founded.",
+      "overview": "ReSTEM is the nonprofit I founded. More on what we're building soon.",
+      "detail1Title": "",
+      "detail1": "",
+      "detail2Title": "",
+      "detail2": "",
+      "detail3Title": "",
+      "detail3": "",
       "tags": [
-        "STEM Outreach",
-        "Program Development",
-        "Mentorship",
-        "Nonprofit Leadership"
+        "Nonprofit",
+        "Founder"
       ]
     },
     "sunflower": {
       "hero": "Sunflower Payload",
       "eyebrow": "Scientific Payload · IREC 2026",
-      "tagline": "Flown at Spaceport America. Open source down to the last screw.",
-      "overview": "Sunflower is the payload my SHPE UCF team flew at IREC 2026. I helped build it end to end: structure, sensor electronics, and the flight firmware. Then we made every CAD file, the BOM, and the code public, so anyone can build their own.",
-      "detail1Title": "Payload Mission",
-      "detail1": "Pressure, temperature, humidity, and particulate data collected through the 10,000-foot climb and the descent.",
-      "detail2Title": "Structure",
-      "detail2": "An aluminum payload bay with a custom PCB sensor array, onboard logging, and passive thermal management for high-altitude exposure.",
-      "detail3Title": "Flight Firmware",
-      "detail3": "ESP-IDF on FreeRTOS with a flight state machine. IMU sampling runs at high priority, tracking at medium, logging at low, so we never drop sensor data during boost.",
+      "tagline": "It lands, finds the sun, and opens up. Flown at IREC 2026.",
+      "overview": "Sunflower is the payload my SHPE UCF team built and flew aboard Odysseus at IREC 2026. The idea is in the name: after landing, it orients itself and raises a solar panel on a scissor lift, like a flower turning toward the sun. Then we open-sourced everything, every CAD file, the bill of materials, and the flight code, so anyone can build one.",
+      "detail1Title": "Self-orientation",
+      "detail1": "A motor-driven planetary gear system rotates the payload so the panel can face the right way, with a BNO085 9-axis IMU telling it which way is up.",
+      "detail2Title": "Scissor lift",
+      "detail2": "Stepper-driven lead screws raise the solar panel on a scissor mechanism. An elevator and retention system integrate the whole payload into Odysseus's nose section.",
+      "detail3Title": "Flight firmware",
+      "detail3": "ESP32 running ESP-IDF on FreeRTOS with a flight state machine. IMU runs at high priority, tracking at medium, and logging to SD at low, so sensor data is never dropped. Power comes from a LiFePO4 pack.",
       "tags": [
-        "Payload Design",
+        "ESP32",
         "ESP-IDF",
         "FreeRTOS",
-        "State Machines",
-        "Data Acquisition",
-        "IREC 2026",
+        "BNO085 IMU",
+        "Stepper Control",
+        "SolidWorks",
+        "Open Source",
         "SHPE UCF"
       ]
     },
     "odysseus": {
       "hero": "Odysseus",
       "eyebrow": "Competition Rocket · IREC 2026",
-      "tagline": "Ten thousand feet. Built by students, engineered like a flagship.",
-      "overview": "Odysseus is UCF's competition rocket for IREC 2026, built to hit 10,000 feet at Spaceport America. Students designed it, built it, and flew it under FAA and NAR safety rules. I was there from the expo floor to the recovery walk.",
-      "detail1Title": "Propulsion",
-      "detail1": "Commercial high-power motor, picked to hit our target apogee inside the competition weight budget, with custom forward and aft integration.",
-      "detail2Title": "Airframe",
-      "detail2": "Fiberglass and carbon fiber airframe with machined aluminum couplers, built to stay together through the transonic regime.",
-      "detail3Title": "Recovery & Avionics",
-      "detail3": "Dual-deploy recovery with a Valdex flight computer as primary and a commercial altimeter as backup. Telemetry from the pad all the way to recovery.",
+      "tagline": "UCF at Spaceport America. Flown, recovered, and carrying our payload.",
+      "overview": "Odysseus is the rocket UCF flew at IREC 2026 at Spaceport America as Team 25. It carried our Sunflower payload in the nose and came home in one piece. I was there for all of it: the expo floor, the rail, liftoff, and the walk out to recover it.",
+      "detail1Title": "Full assembly",
+      "detail1": "The model above is the real flight assembly: 347 bodies, from the nose cone and payload bay down to the fin can. Hit Explore and pull it apart.",
+      "detail2Title": "Payload integration",
+      "detail2": "Sunflower rides in the nose section on its own retention and elevator hardware, so the payload and the rocket were designed together, not bolted together at the end.",
+      "detail3Title": "Avionics",
+      "detail3": "Redundant commercial altimeters, including a PerfectFlite StratoLogger CF, mounted on a 3D-printed avionics sled and bench-tested before the trip.",
       "tags": [
         "High-Power Rocketry",
-        "Composite Airframe",
-        "Dual-Deploy",
-        "Avionics Integration",
-        "IREC",
-        "Team Leadership"
+        "IREC 2026",
+        "Payload Integration",
+        "Avionics",
+        "Fusion 360",
+        "Spaceport America"
       ]
     },
     "fsi": {
       "hero": "Florida Space Institute",
-      "eyebrow": "Research · UCF · Aerospace",
-      "tagline": "Research at the edge of Florida's space coast.",
-      "overview": "The Florida Space Institute is one of Florida's leading space research centers, and working there connects me to real aerospace projects alongside graduate researchers, faculty, and industry partners.",
-      "detail1Title": "Research Focus",
-      "detail1": "Aerospace systems engineering with emphasis on small satellite subsystems, propulsion analysis, and mission design methodology.",
-      "detail2Title": "Collaboration",
-      "detail2": "Working alongside graduate researchers, faculty, and industry partners on projects with real mission relevance.",
-      "detail3Title": "Impact",
-      "detail3": "Research outputs contribute to ongoing FSI initiatives and support UCF's growing role in Florida's commercial space ecosystem.",
+      "eyebrow": "Research · UCF",
+      "tagline": "Research through UCF's Florida Space Institute.",
+      "overview": "I work through the Florida Space Institute at UCF, one of Florida's main space research centers.",
+      "detail1Title": "",
+      "detail1": "",
+      "detail2Title": "",
+      "detail2": "",
+      "detail3Title": "",
+      "detail3": "",
       "tags": [
         "Research",
-        "Aerospace Systems",
-        "Mission Design",
         "UCF",
         "Florida Space Institute"
       ]
@@ -162,7 +159,7 @@
       "hero": "VX Telemetry",
       "eyebrow": "Valdex LLC · Flagship Product",
       "tagline": "Plug in any flight computer. Watch your flight live.",
-      "overview": "Every team I've flown with had the same problem: great avionics, and a ground station held together with a Python script someone wrote the night before launch. So I built the one I wanted. VX Telemetry recognizes your data stream automatically and puts it on a real mission-control dashboard. No parsing code. No setup night. It runs on macOS, Windows, and Linux, and it's built for everything from a first L1 flight to IREC and NASA Student Launch.",
+      "overview": "Most teams I've seen at launches have the same problem: great avionics, and a ground station held together with a script someone wrote the night before. So I built the one I wanted. VX Telemetry recognizes your data stream and puts it on a real mission-control dashboard. No parsing code. It runs on macOS, Windows, and Linux, and it's built for everything from a first L1 flight to IREC and NASA Student Launch.",
       "detail1Title": "Mission control, not a graph",
       "detail1": "A mission clock, a flight-phase track from pad to landing, a GO/NO-GO board, drag-aware apogee prediction on the way up, and touchdown ETA on the way down. Liftoff is accelerometer-gated and apogee is a debounced fused-velocity zero crossing, so one bad baro reading never calls a false apogee.",
       "detail2Title": "Your rocket, flying live",
@@ -240,11 +237,11 @@
       "tagline": "The road to Level 1. Two attempts, one rocket philosophy.",
       "overview": "Harper is my Level 1 high-power certification rocket. The first attempt, flown on an H169, did not earn the certification. Every lesson from that flight is going into attempt two.",
       "detail1Title": "Attempt 1 · H169",
-      "detail1": "The first design and first flight on an H169 motor. It did not certify. Fill in at /admin: what happened and what you learned.",
-      "detail2Title": "What changed",
-      "detail2": "Fill in at /admin: the design changes between attempt one and attempt two.",
-      "detail3Title": "Attempt 2",
-      "detail3": "Coming soon: the revised Harper and its certification flight.",
+      "detail1": "My first Level 1 design and first certification flight, on an H169. It didn't certify. That flight taught me more than a clean one would have.",
+      "detail2Title": "Iterating",
+      "detail2": "Attempt two is a revised Harper built on everything the first flight showed me. I'll post the new model and the result here.",
+      "detail3Title": "Why it matters",
+      "detail3": "Certification is how you earn the right to fly bigger motors. Getting there the hard way is part of the story.",
       "tags": [
         "High-Power Rocketry",
         "L1 Certification",
@@ -258,12 +255,12 @@
       "eyebrow": "HPR Level 2 · Certification Program",
       "tagline": "The next altitude. Built for Level 2.",
       "overview": "Charlotte is my Level 2 high-power rocket, now on its fifth design revision and working toward certification on J, K, and L class motors.",
-      "detail1Title": "Design · V5",
-      "detail1": "Fifth revision of the airframe. Fill in at /admin: what drove each revision.",
-      "detail2Title": "Build",
-      "detail2": "Fill in at /admin: construction, materials, and assembly.",
-      "detail3Title": "Flight",
-      "detail3": "Fill in at /admin: motor, altitude, recovery, and the certification result.",
+      "detail1Title": "Five revisions",
+      "detail1": "Charlotte is on V5. Each revision tightened the design before I commit to a Level 2 flight.",
+      "detail2Title": "Level 2",
+      "detail2": "L2 opens up J, K, and L motors, which means more energy, more speed, and less margin for a sloppy airframe.",
+      "detail3Title": "Next",
+      "detail3": "Finish Level 1 with Harper, then fly Charlotte for L2.",
       "tags": [
         "High-Power Rocketry",
         "L2 Certification",
@@ -294,61 +291,67 @@
     }
   },
   "about": {
-    "intro": "Aerospace engineering student at UCF. I learn by building: avionics, flight software, rockets, and the teams behind them. Founder of Valdex LLC and the ReSTEM nonprofit.",
+    "intro": "I'm an aerospace engineering student at UCF. I learn by building: flight hardware, ground stations, and the software in between. I founded Valdex LLC and the ReSTEM nonprofit, and I'm chasing the Boom Prize with KnightsRP.",
     "experience": [
       {
         "when": "2026",
-        "role": "Payload Co-Lead",
-        "org": "SHPE UCF · IREC 2026",
-        "text": "Sunflower payload flew and competed at Spaceport America. Owned structure, electronics, and FreeRTOS firmware."
+        "role": "Phantom · Boom Prize",
+        "org": "KnightsRP",
+        "text": "Designing the airframe structure and propulsion assembly for a supersonic RC jet, and building its mission-control ground station."
       },
       {
         "when": "2026",
-        "role": "Ground Station Software",
-        "org": "KnightsRP · Boom Prize",
-        "text": "Built the Phantom mission-control app for a Mach 1 RC aircraft attempt."
+        "role": "Sunflower Payload",
+        "org": "SHPE UCF · IREC 2026",
+        "text": "Built and flew a self-orienting solar payload aboard Odysseus at Spaceport America. Fully open source."
       },
       {
-        "when": "2025 to now",
+        "when": "2026",
+        "role": "Odysseus",
+        "org": "UCF · IREC 2026",
+        "text": "Flew with Team 25 at the Intercollegiate Rocket Engineering Competition."
+      },
+      {
+        "when": "Now",
         "role": "Founder",
         "org": "Valdex LLC",
-        "text": "Avionics hardware and VX Telemetry, a cross-platform rocketry ground station."
+        "text": "Shipped VX Telemetry, a cross-platform rocketry ground station. Building the VX hardware line."
       },
       {
-        "when": "2025 to now",
+        "when": "Now",
         "role": "Founder",
         "org": "ReSTEM",
-        "text": "Nonprofit bringing hands-on engineering programs to 200+ Central Florida students."
+        "text": "Nonprofit."
       },
       {
-        "when": "Ongoing",
-        "role": "Researcher",
-        "org": "Florida Space Institute",
-        "text": "Aerospace systems work at UCF's space research center."
+        "when": "Now",
+        "role": "HPR Certification",
+        "org": "Harper L1 · Charlotte L2",
+        "text": "Working through Level 1 and Level 2 high-power certification."
       }
     ],
     "skills": {
-      "Hardware": [
-        "PCB design (KiCad)",
-        "Avionics",
-        "Fusion 360 CAD",
-        "Hybrid propulsion",
-        "TVC & canards",
-        "Test stands"
+      "Hardware & CAD": [
+        "Fusion 360",
+        "SolidWorks",
+        "Airframe structures",
+        "Payload mechanisms",
+        "Avionics integration",
+        "High-power rocketry"
       ],
       "Software": [
-        "C / C++",
-        "ESP-IDF & FreeRTOS",
-        "Python & PySide6",
-        "TypeScript & React",
+        "C · ESP-IDF · FreeRTOS",
+        "Python · PySide6",
+        "TypeScript · React",
+        "Rust · Tauri",
         "Three.js",
-        "Serial & LoRa protocols"
+        "Serial · LoRa protocols"
       ],
       "Leadership": [
-        "Team lead, IREC",
         "Founder, Valdex LLC",
         "Founder, ReSTEM",
-        "Mentoring & outreach"
+        "SHPE UCF",
+        "KnightsRP"
       ]
     }
   }

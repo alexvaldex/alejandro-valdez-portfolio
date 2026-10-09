@@ -65,6 +65,8 @@ function normalize(object) {
   }
   wrap.add(inner)
   wrap.scale.setScalar(FIT / longest)
+  // long vehicles get lengthwise section cuts; their long axis is local X after this
+  wrap.userData.elongated = longest / others > 1.8
   return wrap
 }
 
@@ -75,7 +77,11 @@ function upgradeMaterials(object, fallbackColor) {
     o.castShadow = o.receiveShadow = true
     const mats = Array.isArray(o.material) ? o.material : [o.material]
     const next = mats.map(m => {
-      if (m?.isMeshStandardMaterial) { m.envMapIntensity = 1.2; return m }
+      if (m?.isMeshStandardMaterial) {
+        m.envMapIntensity = 1.2
+        if (/glass/i.test(m.name)) Object.assign(m, { transparent: true, opacity: 0.28, roughness: 0.05, metalness: 0, depthWrite: false })
+        return m
+      }
       return new THREE.MeshStandardMaterial({
         color: m?.color && !fallbackColor ? m.color.clone() : new THREE.Color(fallbackColor || '#c9ccd1'),
         map: m?.map || null,
@@ -179,15 +185,12 @@ function Explorer({ groupRef, root, active, cut, explode, zoomReq, onHide }) {
   const { camera, gl, controls } = useThree()
   const plane = useMemo(() => new THREE.Plane(new THREE.Vector3(0, 0, -1), 1e4), [])
   const parts = useMemo(() => (root ? prepareParts(root, plane) : []), [root, plane])
-  const extent = useMemo(() => {
-    if (!root || !groupRef.current) return [-3, 3]
-    const g = groupRef.current
-    const saved = g.rotation.clone()
-    g.rotation.set(0, 0, 0); g.updateMatrixWorld(true)
-    const box = assemblyBox(root)
-    g.rotation.copy(saved); g.updateMatrixWorld(true)
-    return [box.min.z, box.max.z]
-  }, [root, groupRef])
+  // size of the assembly, so the cutaway and explode scale to any model
+  const bounds = useMemo(() => {
+    if (!root) return { radius: 3, center: new THREE.Vector3() }
+    const sphere = assemblyBox(root).getBoundingSphere(new THREE.Sphere())
+    return { radius: sphere.radius, center: sphere.center }
+  }, [root])
 
   useEffect(() => { gl.localClippingEnabled = true }, [gl])
 
@@ -208,18 +211,34 @@ function Explorer({ groupRef, root, active, cut, explode, zoomReq, onHide }) {
   }, [active, parts])
 
   const smooth = useRef({ cut: 0, explode: 0 })
+  const corners = useRef(null)
   useFrame((_, dt) => {
     const s = smooth.current
     s.cut = THREE.MathUtils.damp(s.cut, active ? cut : 0, 8, dt)
     s.explode = THREE.MathUtils.damp(s.explode, active ? explode : 0, 6, dt)
-    // cutaway plane lives in the model's own frame so it turns with it
-    const [zMin, zMax] = extent
-    const c = s.cut < 0.001 ? 1e4 : zMax - s.cut * (zMax - zMin)
-    if (groupRef.current) {
-      const m = groupRef.current.matrixWorld
-      plane.set(new THREE.Vector3(0, 0, -1), c).applyMatrix4(m)
+    // cutaway always peels away the side facing the viewer, from any angle.
+    // Depth range is measured on the actual geometry along the current view,
+    // so thin rockets and boxy payloads both cut through evenly.
+    if (active && !corners.current && root) {
+      const b = assemblyBox(root)
+      corners.current = [0, 1, 2, 3, 4, 5, 6, 7].map(i => new THREE.Vector3(i & 1 ? b.max.x : b.min.x, i & 2 ? b.max.y : b.min.y, i & 4 ? b.max.z : b.min.z))
     }
-    parts.forEach(p => p.mesh.position.copy(p.base).addScaledVector(p.dir, s.explode * 1.6))
+    if (!active) corners.current = null
+    const view = new THREE.Vector3().subVectors(controls?.target || bounds.center, camera.position).normalize()
+    if (root?.userData.elongated) {
+      // remove the long axis so the plane runs down the centerline, like a section view
+      const axis = new THREE.Vector3(1, 0, 0).transformDirection(root.matrixWorld)
+      const n = view.clone().addScaledVector(axis, -view.dot(axis))
+      if (n.lengthSq() > 1e-4) view.copy(n.normalize())
+    }
+    let t = -1e4
+    if (s.cut > 0.001 && corners.current) {
+      const depths = corners.current.map(c => view.dot(c))
+      const lo = Math.min(...depths), hi = Math.max(...depths)
+      t = lo + (hi - lo) * s.cut * 0.98
+    }
+    plane.set(view, -t)
+    parts.forEach(p => p.mesh.position.copy(p.base).addScaledVector(p.dir, s.explode * 0.75))
   })
 
   return null

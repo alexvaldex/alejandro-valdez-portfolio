@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 
 // Renders an image or a muted autoplaying looped video. Videos only play while on screen.
-export default function Media({ item, label }) {
+export default function Media({ item, label, title }) {
   const ref = useRef()
 
   useEffect(() => {
@@ -13,7 +13,12 @@ export default function Media({ item, label }) {
   }, [item])
 
   if (!item) {
-    return <div className="placeholder">{import.meta.env.DEV && label && <span>{label}</span>}</div>
+    return (
+      <div className="placeholder">
+        {title && <b className="ghostTitle" aria-hidden>{title}</b>}
+        {import.meta.env.DEV && label && <span>{label}</span>}
+      </div>
+    )
   }
   if (item.type === 'video') {
     return <video ref={ref} src={item.url} muted loop playsInline preload="metadata" />

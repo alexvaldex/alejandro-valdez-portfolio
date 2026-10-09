@@ -6,6 +6,7 @@ import Reveal from '../components/Reveal'
 import Lineup from '../components/Lineup'
 import CountUp from '../components/CountUp'
 import { GitHubProfile } from '../components/GitHubPanel'
+import LinkedInFeed from '../components/LinkedInFeed'
 import { byCategory, categories, projects } from '../data/projects'
 import { getMedia, resumeUrl } from '../data/media'
 import { useContent } from '../hooks/useContent'
@@ -54,7 +55,7 @@ export default function HomePage() {
         const m = getMedia(id)
         return (
           <section className="panel" key={id}>
-            <div className="panelMedia"><Media item={m.hero || m.gallery[0]} label={m.model ? '' : `src/media/${id}/hero.jpg`} /></div>
+            <div className="panelMedia"><Media item={m.hero || m.gallery[0]} label={m.model ? '' : `src/media/${id}/hero.jpg`} title={m.model ? null : pc.hero} /></div>
             {m.model && !m.hero && <ModelPreview model={m.model} fill={0.85} className="panelModel" />}
             <div className="panelContent">
               <Reveal as="p" className="eyebrow">{p.kind} · {p.status}</Reveal>
@@ -79,6 +80,8 @@ export default function HomePage() {
           <Lineup items={byCategory(cat.id)} />
         </section>
       ))}
+
+      <LinkedInFeed />
 
       <GitHubProfile />
 

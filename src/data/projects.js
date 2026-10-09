@@ -4,7 +4,7 @@
 // repo: GitHub repo name under alexvaldex, shown live on the project page
 export const GITHUB_USER = 'alexvaldex'
 
-export const categories = [
+const allCategories = [
   { id: 'rockets', label: 'Rockets', blurb: 'Vehicles, payloads, and the road to certification.' },
   { id: 'software', label: 'Software', blurb: 'Mission control, written from scratch.' },
   { id: 'forge', label: 'The Forge', blurb: 'Built by hand. Bionics, armor, and everything between.' },
@@ -12,14 +12,14 @@ export const categories = [
   { id: 'impact', label: 'Impact', blurb: 'Research, ventures, and the people they reach.' },
 ]
 
-export const projects = [
+const allProjects = [
   {
-    id: 'odysseus', category: 'rockets', type: 'model', kind: 'Competition Rocket', year: '2026', status: 'IREC 2026',
-    stats: [['10,000', 'ft apogee target'], ['IREC', '2026 competition'], ['Dual', 'deploy recovery']],
+    id: 'odysseus', category: 'rockets', type: 'model', kind: 'Competition Rocket', year: '2026', status: 'Flown · IREC 2026',
+    stats: [['IREC', '2026, Spaceport America'], ['347', 'bodies in the CAD'], ['Flown', 'and recovered']],
     scenes: [
-      ['Propulsion', 'High-power motor', 'Commercial HPR motor selected for a 10,000 ft AGL apogee under the competition weight budget.'],
-      ['Airframe', 'Composite structure', 'Fiberglass and carbon fiber airframe with machined aluminum couplers built for transonic flight.'],
-      ['Avionics', 'Dual-deploy recovery', 'Valdex flight computer as primary, commercial altimeter as backup. LoRa telemetry from pad to recovery.'],
+      ['The rocket', 'Team 25, UCF', 'The full flight assembly, flown at Spaceport America at IREC 2026.'],
+      ['Payload bay', 'Sunflower in the nose', 'Our payload rides up front on its own retention and elevator hardware.'],
+      ['Avionics', 'Redundant altimeters', 'Commercial altimeters on a 3D-printed sled, bench-tested before the trip.'],
     ],
   },
   {
@@ -33,11 +33,11 @@ export const projects = [
   },
   {
     id: 'sunflower', category: 'rockets', type: 'model', kind: 'Scientific Payload', year: '2026', status: 'Flown · IREC 2026', repo: 'Payload-Sunflower-by-SHPE-UCF', buildKit: true,
-    stats: [['Flown', 'IREC 2026'], ['FreeRTOS', 'flight firmware'], ['Open', 'source design']],
+    stats: [['Flown', 'IREC 2026'], ['97', 'open-source CAD files'], ['FreeRTOS', 'flight firmware']],
     scenes: [
-      ['Mission', 'Science at apogee', 'Pressure, temperature, humidity, and particulate sampling through ascent and descent.'],
-      ['Electronics', 'Custom sensor array', 'ESP-IDF firmware on FreeRTOS: IMU at high priority, tracking at medium, logging at low.'],
-      ['Recovery', 'Built for deployment loads', 'Drogue at apogee, main at 700 ft AGL. Hard points rated for 15G.'],
+      ['Mission', 'Find the sun', 'After landing, Sunflower orients itself and raises a solar panel, like a flower turning to the light.'],
+      ['Mechanism', 'Gears and a scissor lift', 'Planetary gears rotate it. Stepper-driven lead screws lift the panel.'],
+      ['Electronics', 'ESP32 on FreeRTOS', 'A BNO085 IMU, stepper drivers, SD logging, and a LiFePO4 pack, under a flight state machine.'],
     ],
   },
   {
@@ -68,21 +68,21 @@ export const projects = [
     stats: [['3', 'desktop platforms'], ['Any', 'flight computer'], ['0', 'lines of parsing code']] },
   { id: 'phantom', category: 'software', type: 'gallery', kind: 'Mission Control', year: '2026', status: 'Boom Prize', repo: 'Boom-KnightsRP-Flight-Software', related: 'phantomjet',
     stats: [['Mach 1', 'target'], ['CRC-16', 'checked link'], ['Sim + live', 'one interface']] },
-  { id: 'prostheticarm', category: 'forge', type: 'model', kind: 'Bionics', year: '2026', status: 'Build log',
+  { id: 'prostheticarm', category: 'forge', draft: true, type: 'model', kind: 'Bionics', year: '2026', status: 'Build log',
     stats: [['Arm', 'prosthetic'], ['Custom', 'designed'], ['Hand', 'built']],
     scenes: [
       ['Design', 'Built around the user', 'Fill in: what drove the design and who it is for.'],
       ['Mechanism', 'How it moves', 'Fill in: actuation, joints, and control.'],
       ['Build', 'From CAD to hardware', 'Fill in: materials, manufacturing, and testing.'],
     ] },
-  { id: 'prostheticknee', category: 'forge', type: 'model', kind: 'Bionics', year: '2026', status: 'Build log',
+  { id: 'prostheticknee', category: 'forge', draft: true, type: 'model', kind: 'Bionics', year: '2026', status: 'Build log',
     stats: [['Knee', 'prosthetic'], ['Custom', 'designed'], ['Hand', 'built']],
     scenes: [
       ['Design', 'Built for the gait cycle', 'Fill in: what the knee needed to do and why.'],
       ['Mechanism', 'How it moves', 'Fill in: joint design, damping, and locking.'],
       ['Build', 'From CAD to hardware', 'Fill in: materials, manufacturing, and testing.'],
     ] },
-  { id: 'ironarmor', category: 'forge', type: 'model', kind: 'Wearable Armor', year: '2026', status: 'Build log',
+  { id: 'ironarmor', category: 'forge', draft: true, type: 'model', kind: 'Wearable Armor', year: '2026', status: 'Build log',
     stats: [['Iron', 'armor'], ['Wearable', 'fit'], ['Hand', 'built']],
     scenes: [
       ['Design', 'Shaped to the body', 'Fill in: concept, references, and fit.'],
@@ -100,12 +100,16 @@ export const projects = [
     ],
   },
   { id: 'valdex', category: 'impact', type: 'gallery', kind: 'Avionics Company', year: '2025', status: 'Founder',
-    stats: [['8 km', 'telemetry range'], ['20G', 'rated hardware'], ['KiCad', 'to flight']] },
+    stats: [['v1.1', 'VX Telemetry shipped'], ['3', 'desktop platforms'], ['3', 'boards in design']] },
   { id: 'fsi', category: 'impact', type: 'gallery', kind: 'Research', year: '2025', status: 'Researcher',
-    stats: [['UCF', 'Florida Space Institute'], ['SmallSat', 'subsystems'], ['Mission', 'design']] },
+    stats: [] },
   { id: 'restem', category: 'impact', type: 'gallery', kind: 'Nonprofit', year: '2025', status: 'Founder',
-    stats: [['200+', 'students reached'], ['Central FL', 'partner schools'], ['Hands-on', 'every program']] },
+    stats: [] },
 ]
+
+// Drafts stay out of the public site until they have real content
+export const projects = allProjects.filter(p => !p.draft)
+export const categories = allCategories.filter(c => projects.some(p => p.category === c.id))
 
 export const getProject = id => projects.find(p => p.id === id)
 export const byCategory = cat => projects.filter(p => p.category === cat)

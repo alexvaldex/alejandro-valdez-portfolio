@@ -64,20 +64,20 @@ export default function ProjectPage() {
   const next = projects[(projects.indexOf(project) + 1) % projects.length]
   const nextC = useProjectContent(next.id)
   const relatedC = useProjectContent(project.related)
-  const details = [1, 2, 3].map(n => [c[`detail${n}Title`], c[`detail${n}`]]).filter(([t]) => t)
+  const details = [1, 2, 3].map(n => [c[`detail${n}Title`], c[`detail${n}`]]).filter(([t, d]) => t && d && !/^fill in/i.test(d))
 
   return (
     <main>
       <Hero c={c} project={project} media={media} />
 
-      <div className="stats">
+      {project.stats?.length > 0 && <div className="stats">
         {project.stats.map(([v, l], i) => (
           <Reveal key={i} delay={i * 0.1} className="stat">
             <div className="statValue">{v}</div>
             <div className="statLabel">{l}</div>
           </Reveal>
         ))}
-      </div>
+      </div>}
 
       <section className="overview">
         <Reveal as="h2" className="title">Overview</Reveal>
@@ -100,17 +100,17 @@ export default function ProjectPage() {
         </div>
       )}
 
-      {project.type === 'model' && (sceneModel || project.category === 'rockets') && (
-        <ScrollModel key={sceneModel?.url || 'none'} title={version ? `${c.hero} · ${version.label}` : c.hero} scenes={project.scenes} model={sceneModel} projectId={id} />
+      {project.type === 'model' && sceneModel && (
+        <ScrollModel key={sceneModel?.url || 'none'} title={version ? `${c.hero} · ${version.label}` : c.hero} scenes={(project.scenes || []).filter(x => !/^fill in/i.test(x[2]))} model={sceneModel} projectId={id} />
       )}
 
       {project.showcase === 'vx' && <SafeBoundary><VXShowcase /></SafeBoundary>}
 
       <Gallery items={media.gallery} />
 
-      <section className="overview" style={{ paddingBottom: 80 }}>
+      {details.length > 0 && <section className="overview" style={{ paddingBottom: 80 }}>
         <Reveal as="h2" className="title">Engineering</Reveal>
-      </section>
+      </section>}
       <div className="details">
         {details.map(([t, d], i) => (
           <Reveal key={i} delay={i * 0.1} className="detail"><h3>{t}</h3><p>{d}</p></Reveal>

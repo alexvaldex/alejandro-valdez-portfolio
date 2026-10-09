@@ -29,7 +29,7 @@ export default function CategoryPage({ id }) {
         const m = getMedia(p.id)
         return (
           <section className="panel" key={p.id}>
-            <div className="panelMedia"><Media item={m.hero || m.gallery[0]} label={m.model ? '' : `src/media/${p.id}/hero.jpg`} /></div>
+            <div className="panelMedia"><Media item={m.hero || m.gallery[0]} label={m.model ? '' : `src/media/${p.id}/hero.jpg`} title={m.model ? null : pc.hero} /></div>
             {m.model && !m.hero && <ModelPreview model={m.model} fill={0.85} className="panelModel" />}
             <div className="panelContent">
               <Reveal as="p" className="eyebrow">{p.kind} · {p.status}</Reveal>

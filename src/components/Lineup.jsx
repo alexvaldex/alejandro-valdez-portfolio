@@ -34,7 +34,7 @@ function Card({ p, i, c }) {
   return (
           <Reveal delay={i * 0.07}>
             <Link to={`/projects/${p.id}`} className="lineCard" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
-              <div className="lineMedia"><Media item={m.model ? null : m.hero || m.gallery[0]} label="" /></div>
+              <div className="lineMedia"><Media item={m.model ? null : m.hero || m.gallery[0]} label="" title={m.model ? null : c.projects[p.id]?.hero} /></div>
               {m.model && <ModelPreview model={m.model} hover={hover} fill={0.82} className="modelLayer" style={{ bottom: '24%' }} />}
               <span className="arrow">→</span>
               <div className="lineText">
