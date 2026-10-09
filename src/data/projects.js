@@ -50,7 +50,7 @@ const allProjects = [
     ],
     scenes: [
       ['Attempt 1', 'First flight, H169', 'The first Harper and the first shot at Level 1. It did not certify, and that flight taught the most.'],
-      ['Airframe', 'Designed and built', 'Fill in: airframe, fins, and the materials you chose.'],
+      ['The design', 'Designed in Fusion 360', 'The model here is the exact attempt-one assembly. Explode it to see how it goes together.'],
       ['Next', 'Attempt two', 'Every lesson from the first flight, built into the next one.'],
     ],
   },
@@ -59,8 +59,8 @@ const allProjects = [
     stats: [['V5', 'design revision'], ['J / K / L', 'motor class'], ['L2', 'in progress']],
     scenes: [
       ['Level 2', 'The step up', 'A bigger motor, a tougher airframe, and five revisions to get it right.'],
-      ['Airframe', 'Built for more power', 'Fill in: airframe, fins, and what changed from Harper.'],
-      ['Avionics', 'Recovery and electronics', 'Fill in: altimeter, deployment, and how the flight went.'],
+      ['Version 5', 'Five revisions in', 'Each version tightened the design before committing to a Level 2 flight.'],
+      ['Next', 'L1, then L2', 'Finish Level 1 with Harper, then fly Charlotte for Level 2.'],
     ],
   },
 
