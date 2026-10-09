@@ -10,6 +10,7 @@ import shotCanard from '../assets/vx/canard.jpg'
 import shotAirbrake from '../assets/vx/airbrake.jpg'
 import shotSim from '../assets/vx/simulator.jpg'
 import shotPresent from '../assets/vx/present-3d.jpg'
+import shotPredict from '../assets/vx/predicted-apogee.jpg'
 import { GITHUB_USER } from '../data/projects'
 
 const REPO = 'Valdex_Telemetry'
@@ -51,6 +52,7 @@ function useLatestRelease() {
 // Screens captured from VX Telemetry v1.1.1 running its built-in simulator
 const TOUR = [
   { id: 'mission', label: 'Mission control', img: shotMission, text: "The main board seconds from apogee: the T+ clock, the flight-phase track from pad to landing, a GO board for link, telemetry, power, GPS, and RF, and the mission model tracing the real trajectory with every event stamped below it." },
+  { id: 'predict', label: 'Predicted apogee', img: shotPredict, text: "Six seconds into coast, still climbing at 43 m/s, VX already predicts a 541 m apogee from a drag-aware model. The phase track sits on COAST until the fused velocity actually crosses zero." },
   { id: 'templates', label: 'Templates', img: shotTemplates, text: "First launch asks what you're flying. Six layouts, from HPR dual-deploy to TVC bench tests to altitude competitions, so you start on a populated dashboard instead of a blank page." },
   { id: 'present', label: '3D + Present', img: shotPresent, text: "Present mode strips the chrome for the big screen at the pad. Here the 3D vehicle is under drogue, with the chute deployed off the actual flight event." },
   { id: 'tvc', label: 'TVC', img: shotTvc, text: "The TVC layout for thrust-vector bench tests and hops: gimbal deflection against the mechanical limit, RMS tracking error, and a live attitude indicator." },
@@ -83,6 +85,41 @@ function Tour() {
           <p className="eyebrow">Click anywhere to close</p>
         </div>
       )}
+    </div>
+  )
+}
+
+// Real numbers from the repo (Oct 2026)
+const NUMBERS = [['17', 'dashboard widgets'], ['6', 'mission templates'], ['68', 'automated tests'], ['5', 'releases since July'], ['3', 'ingest formats'], ['3', 'desktop platforms']]
+
+const WORKFLOW = [
+  ['Before', 'Rehearse', ['Pick a template for your mission', 'Load a real motor curve or OpenRocket design', 'Fly it in the simulator and inject faults', 'Run the pre-flight checklist and pyro continuity']],
+  ['During', 'Fly', ['Live phase track, GO board, and master caution', 'Predicted apogee on the way up, touchdown ETA on the way down', 'Voice callouts for every flight event', 'Spectator mode so the whole team watches live']],
+  ['After', 'Learn', ['Every session auto-archived and crash-recovered', 'Scrub the replay and overlay a ghost of a past flight', 'Export JSONL, CSV, KML, or GPX', 'Share an offline HTML replay or a one-link flight']],
+]
+
+const RELEASE_LOG = [['v0.9.2', 'Jul 3, 2026', 'First cross-platform release'], ['v0.9.3', 'Jul 14', 'CI and packaging fixes'], ['v0.9.4', 'Jul 14', 'Installers for every platform'], ['v0.9.5', 'Jul 15', 'Stability release'], ['v1.1.1', 'Oct 8', 'Mission-control UI overhaul']]
+
+// The real app, built from the VX source and served at /vx-demo/
+function LiveDemo() {
+  const [on, setOn] = useState(false)
+  return (
+    <div className="vxLive">
+      <div className="vxWindow">
+        <div className="vxChrome"><i /><i /><i /><span>VX Telemetry · running in your browser</span>
+          <a className="vxPop" href="/vx-demo/index.html" target="_blank" rel="noreferrer">Open full screen ↗</a></div>
+        <div className="vxFrame">
+          {on ? (
+            <iframe src="/vx-demo/index.html" title="VX Telemetry live demo" allow="fullscreen; serial" />
+          ) : (
+            <button className="vxLaunch" onClick={() => setOn(true)} style={{ backgroundImage: `url(${shotMission})` }}>
+              <span className="btn">▶ Launch VX Telemetry</span>
+              <small>Pick a template → choose Simulator → Connect</small>
+            </button>
+          )}
+        </div>
+      </div>
+      <p className="vxHint">Best on a laptop or desktop. Everything runs locally in your browser, nothing is uploaded.</p>
     </div>
   )
 }
@@ -163,6 +200,21 @@ export default function VXShowcase() {
         </Reveal>
       </div>
 
+      {/* Try it */}
+      <div className="vxHead" style={{ paddingTop: 120 }}>
+        <Reveal as="p" className="eyebrow">No install, no hardware</Reveal>
+        <Reveal as="h2" className="title" delay={0.06}>Try it live, right here</Reveal>
+        <Reveal as="p" className="body" delay={0.12} style={{ marginTop: 14 }}>This isn't a video. It's the actual app, embedded in this page. Fly a full simulated flight, switch templates, open the flight log, break things.</Reveal>
+      </div>
+      <LiveDemo />
+
+      {/* Numbers */}
+      <div className="vxNumbers">
+        {NUMBERS.map(([v, l], i) => (
+          <Reveal key={l} delay={i * 0.05} className="vxNum2"><b>{v}</b><span>{l}</span></Reveal>
+        ))}
+      </div>
+
       {/* Screen tour */}
       <div className="vxHead" style={{ paddingTop: 100 }}>
         <Reveal as="p" className="eyebrow">Take the tour</Reveal>
@@ -181,6 +233,21 @@ export default function VXShowcase() {
             <span className="vxNum">{String(i + 1).padStart(2, '0')}</span>
             <h3>{t}</h3>
             <p>{d}</p>
+          </Reveal>
+        ))}
+      </div>
+
+      {/* Workflow */}
+      <div className="vxHead">
+        <Reveal as="p" className="eyebrow">Launch day, start to finish</Reveal>
+        <Reveal as="h2" className="title" delay={0.06}>Before. During. After.</Reveal>
+      </div>
+      <div className="vxFlow">
+        {WORKFLOW.map(([when, verb, items], i) => (
+          <Reveal key={when} delay={i * 0.08} className="vxFlowCol">
+            <small>{String(i + 1).padStart(2, '0')} · {when}</small>
+            <h3>{verb}</h3>
+            <ul>{items.map(x => <li key={x}>{x}</li>)}</ul>
           </Reveal>
         ))}
       </div>
@@ -206,6 +273,19 @@ export default function VXShowcase() {
             </Reveal>
           ))}
         </div>
+      </div>
+
+      {/* Releases */}
+      <div className="vxHead">
+        <Reveal as="p" className="eyebrow">Shipping, not slideware</Reveal>
+        <Reveal as="h2" className="title" delay={0.06}>Release history</Reveal>
+      </div>
+      <div className="vxReleases">
+        {RELEASE_LOG.map(([v, d, t], i) => (
+          <Reveal key={v} delay={i * 0.05} className="vxRel">
+            <b>{v}</b><small>{d}</small><span>{t}</span>
+          </Reveal>
+        ))}
       </div>
 
       {/* Hardware */}
