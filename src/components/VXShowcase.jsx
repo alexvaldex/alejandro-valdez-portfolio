@@ -1,5 +1,15 @@
 import { useEffect, useState } from 'react'
 import Reveal from './Reveal'
+import Media from './Media'
+import flightVideo from '../assets/vx/flight.mp4'
+import flight3dVideo from '../assets/vx/flight-3d.mp4'
+import shotTemplates from '../assets/vx/templates.jpg'
+import shotMission from '../assets/vx/mission-control.jpg'
+import shotTvc from '../assets/vx/tvc.jpg'
+import shotCanard from '../assets/vx/canard.jpg'
+import shotAirbrake from '../assets/vx/airbrake.jpg'
+import shotSim from '../assets/vx/simulator.jpg'
+import shotPresent from '../assets/vx/present-3d.jpg'
 import { GITHUB_USER } from '../data/projects'
 
 const REPO = 'Valdex_Telemetry'
@@ -36,6 +46,45 @@ function useLatestRelease() {
       .catch(() => {})
   }, [])
   return rel
+}
+
+// Screens captured from VX Telemetry v1.1.1 running its built-in simulator
+const TOUR = [
+  { id: 'mission', label: 'Mission control', img: shotMission, text: "The main board seconds from apogee: the T+ clock, the flight-phase track from pad to landing, a GO board for link, telemetry, power, GPS, and RF, and the mission model tracing the real trajectory with every event stamped below it." },
+  { id: 'templates', label: 'Templates', img: shotTemplates, text: "First launch asks what you're flying. Six layouts, from HPR dual-deploy to TVC bench tests to altitude competitions, so you start on a populated dashboard instead of a blank page." },
+  { id: 'present', label: '3D + Present', img: shotPresent, text: "Present mode strips the chrome for the big screen at the pad. Here the 3D vehicle is under drogue, with the chute deployed off the actual flight event." },
+  { id: 'tvc', label: 'TVC', img: shotTvc, text: "The TVC layout for thrust-vector bench tests and hops: gimbal deflection against the mechanical limit, RMS tracking error, and a live attitude indicator." },
+  { id: 'canard', label: 'Canards', img: shotCanard, text: "Canard roll control from a nose-on view: per-fin deflection and the roll rate the fins are fighting, flagged the moment roll authority runs out." },
+  { id: 'airbrake', label: 'Air brakes', img: shotAirbrake, text: "Altitude targeting: brake deployment, actuator feedback, and whether predicted apogee is converging on the target. That's the core loop for altitude competitions." },
+  { id: 'sim', label: 'Simulator', img: shotSim, text: "Sim Setup: drop in a real motor file from thrustcurve.org or an OpenRocket design, and VX flies the actual thrust curve, so you can rehearse launch day from your desk." },
+]
+
+function Tour() {
+  const [i, setI] = useState(0)
+  const [zoom, setZoom] = useState(false)
+  const t = TOUR[i]
+  return (
+    <div className="vxTour">
+      <div className="vxTabs" role="tablist">
+        {TOUR.map((x, j) => (
+          <button key={x.id} role="tab" aria-selected={j === i} className={j === i ? 'on' : ''} onClick={() => setI(j)}>{x.label}</button>
+        ))}
+      </div>
+      <div className="vxWindow">
+        <div className="vxChrome"><i /><i /><i /><span>VX Telemetry · {t.label}</span></div>
+        <button className="vxShot" onClick={() => setZoom(true)} aria-label="Enlarge screenshot">
+          <img key={t.id} src={t.img} alt={`VX Telemetry ${t.label} screen`} />
+        </button>
+      </div>
+      <p className="body vxCaption">{t.text}</p>
+      {zoom && (
+        <div className="lightbox" onClick={() => setZoom(false)}>
+          <img src={t.img} alt="" />
+          <p className="eyebrow">Click anywhere to close</p>
+        </div>
+      )}
+    </div>
+  )
 }
 
 const FEATURES = [
@@ -90,6 +139,36 @@ export default function VXShowcase() {
           })}
         </div>
       </div>
+
+      {/* Live demo */}
+      <div className="vxHead">
+        <Reveal as="p" className="eyebrow">Live demo · recorded straight from the app</Reveal>
+        <Reveal as="h2" className="title" delay={0.06}>Watch a full flight</Reveal>
+        <Reveal as="p" className="body" delay={0.12} style={{ marginTop: 14 }}>Pad to landing in the built-in simulator: boost, burnout, apogee, drogue, main, touchdown. Every number, plot, and event you see is VX doing its job in real time.</Reveal>
+      </div>
+      <Reveal className="vxWindow vxDemo">
+        <div className="vxChrome"><i /><i /><i /><span>VX Telemetry · Simulator · HPR dual-deploy</span></div>
+        <div className="vxVideo"><Media item={{ type: 'video', url: flightVideo }} /></div>
+      </Reveal>
+
+      <div className="vxSplit vx3d">
+        <Reveal>
+          <p className="eyebrow">3D vehicle</p>
+          <h3 className="title" style={{ margin: '14px 0 18px' }}>Your rocket, flying live</h3>
+          <p className="body">The 3D view rides on real attitude data. Watch the drogue come out at apogee and the main open on the way down, triggered by the actual flight events, not a canned animation. Load your own CAD and it's your rocket up there.</p>
+        </Reveal>
+        <Reveal delay={0.1} className="vxWindow">
+          <div className="vxChrome"><i /><i /><i /><span>3D Vehicle</span></div>
+          <div className="vxVideo square"><Media item={{ type: 'video', url: flight3dVideo }} /></div>
+        </Reveal>
+      </div>
+
+      {/* Screen tour */}
+      <div className="vxHead" style={{ paddingTop: 100 }}>
+        <Reveal as="p" className="eyebrow">Take the tour</Reveal>
+        <Reveal as="h2" className="title" delay={0.06}>Every mode, one app</Reveal>
+      </div>
+      <Tour />
 
       {/* Features */}
       <div className="vxHead">
