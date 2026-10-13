@@ -480,3 +480,107 @@ img, video { display: block; }
   .vxPop { font-size: 9.5px; letter-spacing: 0.1em; white-space: nowrap; flex-shrink: 0; }
   .vxLaunch small { font-size: 10px; padding: 0 20px; text-align: center; line-height: 1.6; }
 }
+
+/* ── Tess (space theme) ─────────────────────────────── */
+.tess { position: relative; --gold: #ffd25a; }
+.tWarp { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+.tess > *:not(.tWarp) { position: relative; z-index: 1; }
+.tGold { color: var(--gold) !important; }
+.tCenter { text-align: center; display: flex; align-items: center; justify-content: center; gap: 10px; }
+.tPulse { width: 8px; height: 8px; border-radius: 50%; background: #3ddc84; display: inline-block; animation: ping 2s infinite; }
+.tHero { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 120px var(--gutter) 80px; gap: 26px; }
+.tTitle { font-size: clamp(90px, 20vw, 300px); font-weight: 700; line-height: 0.85; color: #fff; text-shadow: 0 0 60px rgba(120,150,255,0.45), 0 0 140px rgba(255,210,90,0.18); }
+.tLede { max-width: 720px; font-size: clamp(17px, 1.6vw, 21px); line-height: 1.65; color: rgba(255,255,255,0.82); font-weight: 300; }
+.tCtas { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+.tBtnGold { background: var(--gold); border-color: var(--gold); color: #000; }
+.tBtnGold::before { background: #fff; }
+.tScrollHint { position: absolute; bottom: 30px; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.5); display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.tScrollHint i { width: 1px; height: 40px; background: linear-gradient(var(--gold), transparent); animation: cue 2s var(--ease) infinite; }
+.tBand { padding: 60px var(--gutter); background: rgba(3,5,15,0.55); backdrop-filter: blur(6px); border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08); }
+.tStats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; margin-top: 30px; text-align: center; }
+.tStats b { display: block; font-size: clamp(30px, 3.6vw, 52px); font-weight: 700; color: #fff; }
+.tStats span { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+.tSection { padding: 140px var(--gutter) 40px; }
+.tSection .display, .tSection .title { margin: 14px 0 18px; }
+.tBody { color: rgba(255,255,255,0.75) !important; max-width: 680px; }
+.tSplit { padding: 140px var(--gutter) 40px; display: grid; grid-template-columns: 1fr 1.15fr; gap: 64px; align-items: center; }
+.tSplit .title { margin: 14px 0 18px; }
+.tFrame img, .tShots img, .tPlot img { width: 100%; height: auto; display: block; border: 1px solid rgba(255,255,255,0.14); box-shadow: 0 30px 100px rgba(40,70,200,0.25); }
+.tLab { margin-top: 40px; display: grid; grid-template-columns: 360px 1fr; border: 1px solid rgba(255,255,255,0.14); background: rgba(4,6,18,0.78); backdrop-filter: blur(8px); }
+.tLabControls { padding: 30px; display: flex; flex-direction: column; gap: 26px; border-right: 1px solid rgba(255,255,255,0.1); }
+.tLabControls label { display: flex; flex-direction: column; gap: 10px; }
+.tLabControls label span, .tRadios > span { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.7); display: flex; justify-content: space-between; }
+.tLabControls b { color: var(--gold); font-weight: 600; }
+.tLabControls small { font-size: 12px; color: rgba(255,255,255,0.5); }
+.tLabControls input[type=range] { accent-color: var(--gold); width: 100%; }
+.tRadios { display: flex; flex-direction: column; gap: 8px; }
+.tRadios button { text-align: left; background: none; border: 1px solid rgba(255,255,255,0.14); color: rgba(255,255,255,0.7); padding: 10px 14px; font: 500 13px var(--font); cursor: pointer; }
+.tRadios button.on { border-color: var(--gold); color: #fff; background: rgba(255,210,90,0.08); }
+.tReadout { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.tReadout small { display: block; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+.tReadout b { font-size: 20px; color: #fff; }
+.tVerdict { padding: 14px; font-size: 13px; line-height: 1.5; border: 1px solid; }
+.tVerdict.yes { border-color: #3ddc84; color: #8ff0b8; background: rgba(61,220,132,0.08); }
+.tVerdict.no { border-color: rgba(255,120,90,0.6); color: #ffb3a1; background: rgba(255,120,90,0.06); }
+.tLabCanvas { width: 100%; height: 100%; min-height: 460px; display: block; }
+.tPipe { position: relative; margin-top: 50px; padding-left: 50px; max-width: 820px; }
+.tPipeLine { position: absolute; left: 14px; top: 10px; bottom: 10px; width: 2px; background: rgba(255,255,255,0.1); }
+.tPipeLine i { display: block; width: 100%; background: linear-gradient(var(--gold), #7aa2ff); box-shadow: 0 0 14px var(--gold); }
+.tStep { position: relative; padding: 0 0 46px; }
+.tDot { position: absolute; left: -43px; top: 6px; width: 16px; height: 16px; border-radius: 50%; background: #05060f; border: 2px solid var(--gold); box-shadow: 0 0 16px rgba(255,210,90,0.5); }
+.tStep small { font-size: 11px; letter-spacing: 0.2em; color: var(--gold); }
+.tStep h3 { font-size: 28px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin: 6px 0 10px; }
+.tStep p { color: rgba(255,255,255,0.72); line-height: 1.7; font-weight: 300; }
+.tTests { margin-top: 40px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); }
+.tTest { background: rgba(4,6,18,0.85); padding: 26px 22px; display: flex; flex-direction: column; gap: 6px; transition: background 0.3s; }
+.tTest:hover { background: rgba(30,40,90,0.85); }
+.tTest small { font-size: 10px; letter-spacing: 0.2em; color: var(--gold); }
+.tTest h4 { font-size: 16px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+.tTest em { font-style: normal; font-size: 12px; color: #9fb6ff; }
+.tTest p { font-size: 13.5px; color: rgba(255,255,255,0.62); line-height: 1.55; font-weight: 300; }
+.tValid { margin-top: 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.tV { padding: 34px; border: 1px solid rgba(255,255,255,0.12); background: rgba(4,6,18,0.7); }
+.tV b { font-size: clamp(48px, 5vw, 76px); font-weight: 700; color: var(--gold); line-height: 1; }
+.tV h4 { font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; margin: 14px 0 10px; }
+.tV p { font-size: 14.5px; color: rgba(255,255,255,0.7); line-height: 1.65; font-weight: 300; }
+.tV strong { color: #fff; font-weight: 600; }
+.tCands { margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.tCand { border: 1px solid rgba(255,210,90,0.35); background: rgba(10,10,25,0.8); padding: 28px; box-shadow: 0 0 60px rgba(255,210,90,0.06); }
+.tCandHead { display: flex; justify-content: space-between; align-items: flex-start; }
+.tCandHead small, .tCandGrid small { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.5); display: block; }
+.tCandHead h3 { font-size: 30px; font-weight: 700; letter-spacing: 0.04em; margin-top: 6px; }
+.tCandHead a { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+.tCandGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 22px 0; }
+.tCandGrid b { font-size: 19px; }
+.tPlot { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; text-align: left; }
+.tPlot span, .tShots figcaption { display: block; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-top: 10px; }
+.tNote { margin-top: 28px; max-width: 760px; font-size: 14px; line-height: 1.7; color: rgba(255,255,255,0.6); border-left: 2px solid var(--gold); padding-left: 16px; }
+.tWindow { margin-top: 40px; border: 1px solid rgba(255,255,255,0.16); background: #0b0b0c; box-shadow: 0 40px 140px rgba(40,70,200,0.3); }
+.tEmbed { position: relative; aspect-ratio: 16 / 10; }
+.tEmbed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.tShots { margin-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.tShots button { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+.tChips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.tLimits ul { list-style: none; margin-top: 18px; max-width: 760px; }
+.tLimits li { padding: 14px 0; border-top: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.72); font-weight: 300; }
+.tRepo .repoCard { background: rgba(3,5,15,0.7); }
+.tCredits { padding-bottom: 120px; display: flex; flex-direction: column; gap: 28px; align-items: flex-start; }
+.tCredits p { max-width: 760px; font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.5); }
+@media (max-width: 1000px) {
+  .tStats { grid-template-columns: repeat(3, 1fr); }
+  .tSplit, .tLab, .tCands, .tValid { grid-template-columns: 1fr; }
+  .tLabControls { border-right: 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .tTests { grid-template-columns: 1fr 1fr; }
+  .tShots { grid-template-columns: 1fr; }
+}
+@media (max-width: 700px) {
+  .tSection, .tSplit { padding-top: 90px; }
+  .tStats { grid-template-columns: 1fr 1fr; }
+  .tTests { grid-template-columns: 1fr; }
+  .tLabCanvas { min-height: 380px; }
+  .tEmbed { aspect-ratio: 3 / 4; }
+  .tCandGrid b { font-size: 16px; }
+  .tPipe { padding-left: 40px; }
+  .tDot { left: -33px; }
+  .tPipeLine { left: 8px; }
+}

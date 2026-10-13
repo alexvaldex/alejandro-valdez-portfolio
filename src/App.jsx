@@ -9,6 +9,7 @@ import ProjectPage from './pages/ProjectPage'
 import CategoryPage from './pages/CategoryPage'
 import AboutPage from './pages/AboutPage'
 import AdminPage from './pages/AdminPage'
+import TessPage from './pages/TessPage'
 import { categories } from './data/projects'
 
 export default function App() {
@@ -24,6 +25,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         {categories.map(k => <Route key={k.id} path={`/${k.id}`} element={<CategoryPage id={k.id} />} />)}
+        <Route path="/projects/tess" element={<TessPage />} />
         <Route path="/projects/:id" element={<ProjectPage key={pathname} />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/admin" element={<AdminPage />} />

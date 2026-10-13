@@ -288,6 +288,21 @@
         "Mission Control",
         "Boom Prize"
       ]
+    },
+    "tess": {
+      "hero": "Tess",
+      "eyebrow": "Software · NASA TESS · Machine Learning",
+      "tagline": "A bot I built that hunts for planets in NASA starlight, on its own, every six hours.",
+      "overview": "Tess screens real NASA TESS stars for transiting planets, vets every signal with 13 tests, scores it with a trained model, and cross-checks every public catalog. It runs for free on GitHub Actions.",
+      "tags": [
+        "Python",
+        "Box Least Squares",
+        "scikit-learn",
+        "lightkurve",
+        "astropy",
+        "GitHub Actions",
+        "NASA MAST"
+      ]
     }
   },
   "about": {

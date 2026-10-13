@@ -64,6 +64,7 @@ const allProjects = [
     ],
   },
 
+  { id: 'tess', category: 'software', type: 'custom', kind: 'Autonomous Planet Hunter', year: '2026', status: 'Hunting every 6 hours', repo: 'nasa-tess-planet-search', stats: [] },
   { id: 'vxtelemetry', category: 'software', type: 'gallery', kind: 'Ground Station', year: '2026', status: 'v1.1 shipped', repo: 'Valdex_Telemetry', showcase: 'vx',
     stats: [['3', 'desktop platforms'], ['Any', 'flight computer'], ['0', 'lines of parsing code']] },
   { id: 'phantom', category: 'software', type: 'gallery', kind: 'Mission Control', year: '2026', status: 'Boom Prize', repo: 'Boom-KnightsRP-Flight-Software', related: 'phantomjet',
