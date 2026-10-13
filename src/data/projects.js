@@ -7,8 +7,8 @@ export const GITHUB_USER = 'alexvaldex'
 const allCategories = [
   { id: 'rockets', label: 'Rockets', blurb: 'Vehicles, payloads, and the road to certification.' },
   { id: 'software', label: 'Software', blurb: 'Mission control, written from scratch.' },
-  { id: 'forge', label: 'The Forge', blurb: 'Built by hand. Bionics, armor, and everything between.' },
   { id: 'arsenal', label: 'Arsenal', blurb: 'Reverse-engineering the machines that shaped history.' },
+  { id: 'sidequests', label: 'Side Quests', blurb: 'Where it started, and everything I could not stop building.' },
   { id: 'impact', label: 'Impact', blurb: 'Research, ventures, and the people they reach.' },
 ]
 
@@ -69,27 +69,6 @@ const allProjects = [
     stats: [['3', 'desktop platforms'], ['Any', 'flight computer'], ['0', 'lines of parsing code']] },
   { id: 'phantom', category: 'software', type: 'gallery', kind: 'Mission Control', year: '2026', status: 'Boom Prize', repo: 'Boom-KnightsRP-Flight-Software', related: 'phantomjet',
     stats: [['Mach 1', 'target'], ['CRC-16', 'checked link'], ['Sim + live', 'one interface']] },
-  { id: 'prostheticarm', category: 'forge', draft: true, type: 'model', kind: 'Bionics', year: '2026', status: 'Build log',
-    stats: [['Arm', 'prosthetic'], ['Custom', 'designed'], ['Hand', 'built']],
-    scenes: [
-      ['Design', 'Built around the user', 'Fill in: what drove the design and who it is for.'],
-      ['Mechanism', 'How it moves', 'Fill in: actuation, joints, and control.'],
-      ['Build', 'From CAD to hardware', 'Fill in: materials, manufacturing, and testing.'],
-    ] },
-  { id: 'prostheticknee', category: 'forge', draft: true, type: 'model', kind: 'Bionics', year: '2026', status: 'Build log',
-    stats: [['Knee', 'prosthetic'], ['Custom', 'designed'], ['Hand', 'built']],
-    scenes: [
-      ['Design', 'Built for the gait cycle', 'Fill in: what the knee needed to do and why.'],
-      ['Mechanism', 'How it moves', 'Fill in: joint design, damping, and locking.'],
-      ['Build', 'From CAD to hardware', 'Fill in: materials, manufacturing, and testing.'],
-    ] },
-  { id: 'ironarmor', category: 'forge', draft: true, type: 'model', kind: 'Wearable Armor', year: '2026', status: 'Build log',
-    stats: [['Iron', 'armor'], ['Wearable', 'fit'], ['Hand', 'built']],
-    scenes: [
-      ['Design', 'Shaped to the body', 'Fill in: concept, references, and fit.'],
-      ['Fabrication', 'Cut, formed, assembled', 'Fill in: materials and fabrication methods.'],
-      ['Finish', 'The finished suit', 'Fill in: finishing, mobility, and what you learned.'],
-    ] },
   {
     id: 'phantomjet', category: 'arsenal', related: 'phantom', type: 'model', kind: 'Supersonic RC Jet', year: '2026', status: 'Boom Prize · in development',
     stats: [['Mach 1+', 'twice, same day'], ['25 kg', 'max takeoff weight'], ['$800K', 'Boom Prize']],
@@ -100,6 +79,12 @@ const allProjects = [
       ['Mission control', 'Ready before first flight', 'I wrote the ground station first. Mach, EGT, RPM, and q, live against redlines.'],
     ],
   },
+  { id: 'ftc', category: 'sidequests', type: 'gallery', kind: 'FTC Robotics', year: 'High school', status: 'High school', stats: [] },
+  { id: 'skylink', category: 'sidequests', type: 'gallery', kind: 'Research Rocketry', year: 'High school', status: 'High school', stats: [] },
+  { id: 'modelrockets', category: 'sidequests', type: 'gallery', kind: 'Model Rocketry', year: 'High school', status: 'High school', stats: [] },
+  { id: 'scioly', category: 'sidequests', type: 'gallery', kind: 'Science Olympiad', year: 'High school', status: 'High school', stats: [] },
+  { id: 'iphonerepair', category: 'sidequests', type: 'gallery', kind: 'Electronics Repair', year: 'High school', status: 'High school', stats: [] },
+  { id: 'skateboard', category: 'sidequests', type: 'gallery', kind: 'Electric Vehicle', year: '2025', status: '2025', stats: [] },
   { id: 'valdex', category: 'impact', type: 'gallery', kind: 'Avionics Company', year: '2025', status: 'Founder',
     stats: [['v1.1', 'VX Telemetry shipped'], ['3', 'desktop platforms'], ['3', 'boards in design']] },
   { id: 'fsi', category: 'impact', type: 'gallery', kind: 'Research', year: '2025', status: 'Researcher',

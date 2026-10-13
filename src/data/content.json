@@ -177,60 +177,6 @@
         "CI / Cross-platform"
       ]
     },
-    "prostheticarm": {
-      "hero": "Prosthetic Arm",
-      "eyebrow": "The Forge · Bionics",
-      "tagline": "Engineering that moves with the person wearing it.",
-      "overview": "Fill in at /admin: the story of this build, who it is for, and what makes it work.",
-      "detail1Title": "Design",
-      "detail1": "Fill in at /admin: design goals and constraints.",
-      "detail2Title": "Build",
-      "detail2": "Fill in at /admin: materials, manufacturing, and assembly.",
-      "detail3Title": "Results",
-      "detail3": "Fill in at /admin: testing, outcomes, and lessons learned.",
-      "tags": [
-        "Bionics",
-        "Mechanical Design",
-        "CAD",
-        "Fabrication"
-      ]
-    },
-    "prostheticknee": {
-      "hero": "Prosthetic Knee",
-      "eyebrow": "The Forge · Bionics",
-      "tagline": "A knee rebuilt from first principles.",
-      "overview": "Fill in at /admin: the story of this build, who it is for, and what makes it work.",
-      "detail1Title": "Design",
-      "detail1": "Fill in at /admin: design goals and constraints.",
-      "detail2Title": "Build",
-      "detail2": "Fill in at /admin: materials, manufacturing, and assembly.",
-      "detail3Title": "Results",
-      "detail3": "Fill in at /admin: testing, outcomes, and lessons learned.",
-      "tags": [
-        "Bionics",
-        "Mechanical Design",
-        "CAD",
-        "Fabrication"
-      ]
-    },
-    "ironarmor": {
-      "hero": "Iron Armor",
-      "eyebrow": "The Forge · Wearable Armor",
-      "tagline": "Cut, formed, and fitted by hand.",
-      "overview": "Fill in at /admin: the concept behind the suit and how it came together.",
-      "detail1Title": "Design",
-      "detail1": "Fill in at /admin: design goals and constraints.",
-      "detail2Title": "Build",
-      "detail2": "Fill in at /admin: materials, manufacturing, and assembly.",
-      "detail3Title": "Results",
-      "detail3": "Fill in at /admin: testing, outcomes, and lessons learned.",
-      "tags": [
-        "Metalwork",
-        "Fabrication",
-        "Wearables",
-        "Design"
-      ]
-    },
     "harper": {
       "hero": "Harper",
       "eyebrow": "HPR Level 1 · Certification Program",
@@ -303,6 +249,48 @@
         "GitHub Actions",
         "NASA MAST"
       ]
+    },
+    "ftc": {
+      "hero": "FTC Robotics",
+      "eyebrow": "Team 24632 · two seasons",
+      "tagline": "Two seasons of FIRST Tech Challenge: sketching, CAD, printed parts, and a lot of late nights in the garage.",
+      "overview": "Two seasons of FIRST Tech Challenge: sketching, CAD, printed parts, and a lot of late nights in the garage.",
+      "tags": []
+    },
+    "skylink": {
+      "hero": "SkyLink",
+      "eyebrow": "Research · rocketry",
+      "tagline": "A research project into rocket-boosted lifting bodies, from printed airframes and launches to a full presentation board.",
+      "overview": "A research project into rocket-boosted lifting bodies, from printed airframes and launches to a full presentation board.",
+      "tags": []
+    },
+    "modelrockets": {
+      "hero": "Model Rockets",
+      "eyebrow": "Where it started",
+      "tagline": "My first rockets: kits, then my own designs in CAD and on the 3D printer. Some came back from the pond.",
+      "overview": "My first rockets: kits, then my own designs in CAD and on the 3D printer. Some came back from the pond.",
+      "tags": []
+    },
+    "scioly": {
+      "hero": "Science Olympiad",
+      "eyebrow": "Competition team",
+      "tagline": "Build events, lab events, and a lot of Arduino wiring with my Science Olympiad team.",
+      "overview": "Build events, lab events, and a lot of Arduino wiring with my Science Olympiad team.",
+      "tags": []
+    },
+    "iphonerepair": {
+      "hero": "iPhone Repairs",
+      "eyebrow": "Hands-on electronics",
+      "tagline": "Opening up broken iPhones and bringing them back: displays, batteries, and housings.",
+      "overview": "Opening up broken iPhones and bringing them back: displays, batteries, and housings.",
+      "tags": []
+    },
+    "skateboard": {
+      "hero": "Electric Skateboard",
+      "eyebrow": "Built from parts",
+      "tagline": "A hub-motor electric skateboard with battery packs I built myself.",
+      "overview": "A hub-motor electric skateboard with battery packs I built myself.",
+      "tags": []
     }
   },
   "about": {
