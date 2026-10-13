@@ -3,6 +3,7 @@ import Media from '../components/Media'
 import ModelPreview from '../components/ModelPreview'
 import Reveal from '../components/Reveal'
 import Lineup from '../components/Lineup'
+import QuestLog from '../components/QuestLog'
 import { byCategory, categories } from '../data/projects'
 import { getMedia } from '../data/media'
 import { useContent } from '../hooks/useContent'
@@ -22,7 +23,7 @@ export default function CategoryPage({ id }) {
         </div>
         <Reveal as="p" className="body" delay={0.16}>{cat.blurb}</Reveal>
       </div>
-      <Lineup items={items} />
+      {id === 'sidequests' ? <QuestLog items={items} /> : <Lineup items={items} />}
 
       {items.map(p => {
         const pc = c.projects[p.id] || {}

@@ -252,45 +252,147 @@
     },
     "ftc": {
       "hero": "FTC Robotics",
-      "eyebrow": "Team 24632 · two seasons",
-      "tagline": "Two seasons of FIRST Tech Challenge: sketching, CAD, printed parts, and a lot of late nights in the garage.",
-      "overview": "Two seasons of FIRST Tech Challenge: sketching, CAD, printed parts, and a lot of late nights in the garage.",
-      "tags": []
+      "eyebrow": "Side quest · FIRST Tech Challenge",
+      "tagline": "Two seasons of FIRST Tech Challenge with Team 24632.",
+      "overview": "Two seasons of FIRST Tech Challenge. Every robot started as notebook sketches, went into CAD, and came together with printed parts, extrusion, and a lot of late nights in a garage. Then we drove it at competition and did it all again.",
+      "tags": [
+        "FIRST Tech Challenge",
+        "CAD",
+        "3D Printing",
+        "Mechanisms",
+        "Teamwork"
+      ],
+      "detail1Title": "Design",
+      "detail1": "Sketches into CAD, custom gears, and 3D-printed parts designed around each season's game.",
+      "detail2Title": "Build",
+      "detail2": "Mecanum drivetrains, linear-slide lifts, and wiring that had to survive matches.",
+      "detail3Title": "Compete",
+      "detail3": "Driver practice, inspections, and competition days with the team."
     },
     "skylink": {
       "hero": "SkyLink",
-      "eyebrow": "Research · rocketry",
-      "tagline": "A research project into rocket-boosted lifting bodies, from printed airframes and launches to a full presentation board.",
-      "overview": "A research project into rocket-boosted lifting bodies, from printed airframes and launches to a full presentation board.",
-      "tags": []
+      "eyebrow": "Side quest · Research rocketry",
+      "tagline": "Researching rocket-boosted lifting bodies, then launching them.",
+      "overview": "SkyLink was my research project on rocket-boosted lifting bodies: how a vehicle launched on a rocket can glide efficiently instead of just falling. I dug into lift-to-drag and trajectory research, printed my own airframes, launched them, and presented the whole thing on a board in front of judges.",
+      "tags": [
+        "Research",
+        "Aerodynamics",
+        "3D Printing",
+        "Rocketry",
+        "Presentation"
+      ],
+      "detail1Title": "Research",
+      "detail1": "Lift-to-drag versus angle of attack, and optimal trajectory shapes for rocket-assisted gliders.",
+      "detail2Title": "Build & fly",
+      "detail2": "3D-printed airframes and fin cans, launched and recovered.",
+      "detail3Title": "Present",
+      "detail3": "A full tri-fold presentation, defended in front of judges."
     },
     "modelrockets": {
       "hero": "Model Rockets",
-      "eyebrow": "Where it started",
-      "tagline": "My first rockets: kits, then my own designs in CAD and on the 3D printer. Some came back from the pond.",
-      "overview": "My first rockets: kits, then my own designs in CAD and on the 3D printer. Some came back from the pond.",
-      "tags": []
+      "eyebrow": "Side quest · Where it started",
+      "tagline": "Where it started: kits, then my own designs.",
+      "overview": "Before high-power, there were model rockets. I started with kits, then moved to designing my own in CAD and printing the airframes, centering rings, and fin cans myself. Some flew perfectly. One came back from a pond.",
+      "tags": [
+        "Rocketry",
+        "CAD",
+        "3D Printing"
+      ],
+      "detail1Title": "Kits",
+      "detail1": "The first builds and first flights.",
+      "detail2Title": "Own designs",
+      "detail2": "CAD, sliced and printed: airframes, rings, and fins.",
+      "detail3Title": "Flight",
+      "detail3": "Night launches, parachute recoveries, and lessons from every flight."
     },
     "scioly": {
       "hero": "Science Olympiad",
-      "eyebrow": "Competition team",
-      "tagline": "Build events, lab events, and a lot of Arduino wiring with my Science Olympiad team.",
-      "overview": "Build events, lab events, and a lot of Arduino wiring with my Science Olympiad team.",
-      "tags": []
+      "eyebrow": "Side quest · Competition team",
+      "tagline": "Build events, lab events, and a lot of wiring.",
+      "overview": "Science Olympiad with my school team: build events with Arduinos, sensors, and motors, lab events with glassware and goggles, and competition days that ran from morning to night.",
+      "tags": [
+        "Arduino",
+        "Electronics",
+        "Chemistry",
+        "Competition"
+      ],
+      "detail1Title": "Build events",
+      "detail1": "Arduino circuits, sensors, and code built and tested for competition.",
+      "detail2Title": "Lab events",
+      "detail2": "Hands-on chemistry and lab work under the clock.",
+      "detail3Title": "The team",
+      "detail3": "Competing together as Panther Science Olympiad."
     },
     "iphonerepair": {
       "hero": "iPhone Repairs",
-      "eyebrow": "Hands-on electronics",
-      "tagline": "Opening up broken iPhones and bringing them back: displays, batteries, and housings.",
-      "overview": "Opening up broken iPhones and bringing them back: displays, batteries, and housings.",
-      "tags": []
+      "eyebrow": "Side quest · Hands-on electronics",
+      "tagline": "Taking broken iPhones apart and bringing them back.",
+      "overview": "Opening up cracked and broken iPhones and bringing them back to life: display swaps, battery work, and full housing transfers. Small screws, tiny connectors, zero room for mistakes.",
+      "tags": [
+        "Electronics",
+        "Repair",
+        "Precision Work"
+      ],
+      "detail1Title": "Diagnose",
+      "detail1": "Figure out what is actually broken.",
+      "detail2Title": "Repair",
+      "detail2": "Displays, batteries, and housing transfers.",
+      "detail3Title": "Return",
+      "detail3": "Back in someone's hand, working."
     },
     "skateboard": {
       "hero": "Electric Skateboard",
-      "eyebrow": "Built from parts",
-      "tagline": "A hub-motor electric skateboard with battery packs I built myself.",
-      "overview": "A hub-motor electric skateboard with battery packs I built myself.",
-      "tags": []
+      "eyebrow": "Side quest · Built from parts",
+      "tagline": "A hub-motor electric skateboard, battery packs and all.",
+      "overview": "An electric skateboard I built from parts: hub motors, a deck-mounted electronics bay, and battery packs I assembled myself. Lots of soldering, some sparks, and then it rode.",
+      "tags": [
+        "Battery Packs",
+        "Soldering",
+        "Motors",
+        "EV"
+      ],
+      "detail1Title": "Power",
+      "detail1": "Battery packs built from cells, with a BMS to keep them safe.",
+      "detail2Title": "Drive",
+      "detail2": "Hub motors and an electronics bay wired into the deck.",
+      "detail3Title": "Ride",
+      "detail3": "Tested, tuned, and ridden."
+    },
+    "mary": {
+      "hero": "Mary",
+      "eyebrow": "Arsenal · Ground support",
+      "tagline": "The box that says go.",
+      "overview": "Mary is the launch control panel I built for my rockets: a keyed arm switch, lit continuity and fire buttons, and its own battery, all packed into a rugged case so it survives the field. It started as a desk covered in wire and ended up as something I trust to light a motor.",
+      "tags": [
+        "Electronics",
+        "Launch Systems",
+        "Soldering",
+        "Safety Design"
+      ],
+      "detail1Title": "Safety first",
+      "detail1": "A keyed arm switch and separate fire button, so nothing fires until it is armed on purpose.",
+      "detail2Title": "Continuity check",
+      "detail2": "Lit indicators confirm the igniter circuit is good before a launch, so a bad connection shows up on the pad, not at T-0.",
+      "detail3Title": "Built for the field",
+      "detail3": "Everything lives in a rugged case with its own battery, ready to haul out to the launch site."
+    },
+    "eweek": {
+      "hero": "Tracked Robot",
+      "eyebrow": "Side quest · Engineers Week",
+      "tagline": "A remote-controlled tracked robot, from whiteboard to driving.",
+      "overview": "A tracked robot I designed and built for Engineers Week. It went from whiteboard sketches to CAD, a 3D-printed chassis, an arm, Arduino code, and a radio controller, all on a deadline.",
+      "tags": [
+        "Arduino",
+        "3D Printing",
+        "CAD",
+        "Robotics"
+      ],
+      "detail1Title": "Design",
+      "detail1": "Whiteboard sketches turned into a CAD model of the chassis and arm.",
+      "detail2Title": "Build",
+      "detail2": "3D-printed chassis on a tracked base, with an arm and on-board electronics.",
+      "detail3Title": "Control",
+      "detail3": "Arduino code and an RC transmitter to drive it."
     }
   },
   "about": {

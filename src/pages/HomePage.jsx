@@ -4,6 +4,7 @@ import Media from '../components/Media'
 import ModelPreview from '../components/ModelPreview'
 import Reveal from '../components/Reveal'
 import Lineup from '../components/Lineup'
+import QuestLog from '../components/QuestLog'
 import CountUp from '../components/CountUp'
 import { GitHubProfile } from '../components/GitHubPanel'
 import LinkedInFeed from '../components/LinkedInFeed'
@@ -77,7 +78,7 @@ export default function HomePage() {
             </div>
             <Link className="btn" to={`/${cat.id}`}>View all</Link>
           </div>
-          <Lineup items={byCategory(cat.id)} />
+          {cat.id === 'sidequests' ? <QuestLog items={byCategory(cat.id)} /> : <Lineup items={byCategory(cat.id)} />}
         </section>
       ))}
 

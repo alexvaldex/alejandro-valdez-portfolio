@@ -584,3 +584,27 @@ img, video { display: block; }
   .tDot { left: -33px; }
   .tPipeLine { left: 8px; }
 }
+
+/* ── Side Quests log ────────────────────────────────── */
+.quest { border-top: 1px solid var(--line); }
+.questRow { position: relative; display: grid; grid-template-columns: 70px 1.4fr 1fr 140px 100px 40px; align-items: center; gap: 20px; padding: 30px var(--gutter); border-bottom: 1px solid var(--line); overflow: hidden; transition: background 0.4s var(--ease), padding 0.4s var(--ease); }
+.questRow::before { content: ''; position: absolute; inset: 0; background: #fff; transform: scaleY(0); transform-origin: bottom; transition: transform 0.45s var(--ease); z-index: 0; }
+.questRow > * { position: relative; z-index: 1; transition: color 0.3s; }
+.questRow:hover::before { transform: scaleY(1); }
+.questRow:hover > * { color: #000; }
+.questNum { font-size: 13px; letter-spacing: 0.2em; color: var(--muted); }
+.questName { font-size: clamp(26px, 3.4vw, 50px); font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1; }
+.questKind, .questEra, .questCount { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+.questArrow { font-size: 24px; text-align: right; transition: transform 0.4s var(--ease); }
+.questRow:hover .questArrow { transform: translateX(6px); }
+.questThumb { display: none; }
+.questFloat { position: fixed; z-index: 50; width: 300px; height: 210px; object-fit: cover; pointer-events: none; box-shadow: 0 30px 80px rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.2); }
+@media (hover: none), (max-width: 900px) {
+  .questFloat { display: none; }
+  .questRow { grid-template-columns: 1fr auto; grid-template-areas: "thumb thumb" "name arrow" "kind era"; gap: 8px 16px; padding: 22px var(--gutter) 26px; }
+  .questThumb { display: block; grid-area: thumb; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; margin-bottom: 10px; }
+  .questNum, .questCount { display: none; }
+  .questName { grid-area: name; font-size: 28px; }
+  .questArrow { grid-area: arrow; }
+  .questKind { grid-area: kind; } .questEra { grid-area: era; text-align: right; }
+}

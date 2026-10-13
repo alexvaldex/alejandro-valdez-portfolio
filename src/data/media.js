@@ -26,7 +26,7 @@ for (const [path, url] of Object.entries(files)) {
 function captionFrom(name) {
   return name
     .replace(/\.[^.]+$/, '')
-    .replace(/^\d+[-_ ]*/, '')
+    .replace(/^\d+[a-z]?[-_ ]*/i, '')
     .replace(/[-_]+/g, ' ')
     .trim()
 }
